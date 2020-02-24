@@ -1,0 +1,64 @@
+#!/bin/sh
+
+uci set luci.main.lang=zh_cn
+uci set luci.main.mediaurlbase=/luci-static/argon_dark
+uci commit luci
+
+uci set system.@system[0].hostname=Router
+uci set system.@system[0].timezone=CST-8
+uci set system.@system[0].zonename=Asia/Shanghai
+uci set system.@watchcat[0].pingperiod=30m
+uci commit system
+
+uci set fstab.@global[0].anon_mount=1
+uci commit fstab
+
+uci set network.lan.ipaddr=192.168.123.1
+uci commit network
+
+uci set wireless.@wifi-device[0].disabled=1
+uci set wireless.@wifi-device[0].channel=auto
+uci set wireless.@wifi-device[0].country=CN
+uci set wireless.@wifi-iface[0].ssid=OPR
+uci set wireless.@wifi-iface[0].encryption=psk-mixed
+uci set wireless.@wifi-iface[0].key=password
+uci set wireless.@wifi-device[1].disabled=1
+uci set wireless.@wifi-device[1].channel=auto
+uci set wireless.@wifi-device[1].country=CN
+uci set wireless.@wifi-iface[1].ssid=OPR_5G
+uci set wireless.@wifi-iface[1].encryption=psk-mixed
+uci set wireless.@wifi-iface[1].key=password
+uci commit wireless
+
+echo "00 5 * * 1 sleep 5 && touch /etc/banner && reboot" >> /etc/crontabs/root
+
+sed -i 's/root::0:0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/g' /etc/shadow
+
+sed -i '/DISTRIB_REVISION/d' /etc/openwrt_release
+echo "DISTRIB_REVISION='R8.3.19.0410'" >> /etc/openwrt_release
+sed -i '/DISTRIB_DESCRIPTION/d' /etc/openwrt_release
+echo "DISTRIB_DESCRIPTION='Router'" >> /etc/openwrt_release
+#echo -e "\nddns.net" >> /etc/config/passwall_rule/whitelist_host
+
+sed -i '/Powered by/d' /usr/lib/lua/luci/view/themes/bootstrap/footer.htm
+sed -i '/Powered by/d' /usr/lib/lua/luci/view/themes/argon_dark/footer.htm
+sed -i '/Powered by/d' /usr/lib/lua/luci/view/themes/argon_dark_purple/footer.htm
+sed -i '/Powered by/d' /usr/lib/lua/luci/view/themes/argon_light/footer.htm
+sed -i '/Powered by/d' /usr/lib/lua/luci/view/themes/argon_light_green/footer.htm
+sed -i '/Powered by/d' /usr/lib/lua/luci/view/themes/rosy/footer.htm
+sed -i '/Powered by/d' /usr/lib/lua/luci/view/themes/bootstrap_blue/footer.htm
+sed -i '/Powered by/d' /usr/lib/lua/luci/view/themes/bootstrap_purple/footer.htm
+sed -i '/Powered by/d' /usr/lib/lua/luci/view/themes/netgear_mc/footer.htm
+sed -i '/Powered by/d' /usr/lib/lua/luci/view/themes/leo/footer.htm
+sed -i '/Powered by/d' /usr/lib/lua/luci/view/themes/leo1/footer.htm
+
+sed -i '/<%=pcdata(ver.distname)%> <%=pcdata(ver.distversion)%>/d' /usr/lib/lua/luci/view/admin_status/index.htm
+sed -i 's/<%=pcdata(ver.luciname)%> (<%=pcdata(ver.luciversion)%>)/<%=pcdata(ver.distname)%> <%=pcdata(ver.distversion)%>/g' /usr/lib/lua/luci/view/admin_status/index.htm
+
+sed -i 's/downloads.openwrt.org/mirrors.tuna.tsinghua.edu.cn\/lede/g' /etc/opkg/distfeeds.conf
+
+sed -i 's/invalid users/#invalid users/g' /etc/samba/smb.conf.template
+
+rm -rf /tmp/luci-*
+
+exit 0
