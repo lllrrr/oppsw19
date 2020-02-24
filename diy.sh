@@ -115,7 +115,8 @@ svn checkout https://github.com/rufengsuixing/luci-app-syncdial/trunk package/le
 #svn checkout https://github.com/openwrt/packages/trunk/net/ariang package/lean/ariang
 #svn checkout https://github.com/openwrt/packages/trunk/utils/zstd package/lean/zstd
 svn checkout https://github.com/lllrrr/frpmod/trunk package/lean/frpmod
+rm -rf feeds/packages/net/kcptun/
 cp ../target.mk include/
 cp ../zzz-default-settings package/lean/default-settings/files/
-sed -i "s/8.3.19.0410/8.7.$(date "+%y.%m%d.%H")/g" package/lean/default-settings/files/zzz-default-settings
-sed -i "s/8.3.19.0410/8.7.$(date "+%y.%m%d.%H")/g" files/etc/banner
+sed -i "s/8.3.19.0410/9.1.$(date "+%y.%m%d.%H")/g" package/lean/default-settings/files/zzz-default-settings
+sed -i "s/8.3.19.0410/9.1.$(date "+%y.%m%d.%H")/g" files/etc/banner
