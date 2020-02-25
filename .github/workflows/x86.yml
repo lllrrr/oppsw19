@@ -16,10 +16,10 @@ on:
       - master
     paths:
       - 'x86.config'
-    schedule:
-      - cron: 0 3 */3 * *
-    watch:
-      types: [started]
+  schedule:
+    - cron: 0 22 */15 * *
+  watch:
+    types: [started]
 
 env:
   REPO_URL: https://github.com/openwrt/openwrt
