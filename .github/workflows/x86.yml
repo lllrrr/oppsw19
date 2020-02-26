@@ -105,8 +105,8 @@ jobs:
         mkdir -p ./artifact/
         find openwrt/bin/targets/ -name "*combined*vmdk*" | xargs -i mv -f {} ./artifact/
         find openwrt/bin/targets/ -name "*combined*img*" | xargs -i mv -f {} ./artifact/
-#       find openwrt/bin/targets/ -name "*sysupgrade*bin*" | xargs -i mv -f {} ./artifact/
-#        find openwrt/bin/targets/ -name "*rootfs*tar*gz*" | xargs -i mv -f {} ./artifact/
+        find openwrt/bin/targets/ -name "*sysupgrade*bin*" | xargs -i mv -f {} ./artifact/
+        find openwrt/bin/targets/ -name "*rootfs*tar*gz*" | xargs -i mv -f {} ./artifact/
         find openwrt/bin/targets/ -name "sha256sums" | xargs -i mv -f {} ./artifact/
         find openwrt/bin/targets/ -name "config.buildinfo" | xargs -i mv -f {} ./artifact/
         find openwrt/bin/targets/ -name "feeds.buildinfo" | xargs -i mv -f {} ./artifact/
