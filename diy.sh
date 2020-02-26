@@ -48,6 +48,7 @@ svn checkout https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-np
 svn checkout https://github.com/coolsnowwolf/lede/trunk/package/lean/softethervpn5 package/lean/softethervpn5
 svn checkout https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-wrtbwmon package/lean/luci-app-wrtbwmon
 #svn checkout https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-ttyd package/lean/luci-app-ttyd
+#svn checkout https://github.com/coolsnowwolf/packages/trunk/utils/ttyd package/lean/ttyd
 #svn checkout https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-webadmin package/lean/luci-app-webadmin
 svn checkout https://github.com/coolsnowwolf/lede/trunk/package/lean/qt5 package/lean/qt5
 svn checkout https://github.com/coolsnowwolf/lede/trunk/package/lean/qBittorrent package/lean/qBittorrent
@@ -55,6 +56,7 @@ svn checkout https://github.com/coolsnowwolf/lede/trunk/package/lean/rblibtorren
 svn checkout https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-qbittorrent package/lean/luci-app-qbittorrent
 svn checkout https://github.com/coolsnowwolf/lede/trunk/package/lean/baidupcs-web package/lean/baidupcs-web
 svn checkout https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-baidupcs-web package/lean/luci-app-baidupcs-web
+svn checkout https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-zerotier package/lean/luci-app-zerotier
 svn checkout https://github.com/Lienol/openwrt-package/trunk/lienol package/lienol/lienol
 svn checkout https://github.com/Lienol/openwrt-package/trunk/others package/lienol/others
 svn checkout https://github.com/Lienol/openwrt-package/trunk/package package/lienol/package
@@ -89,30 +91,36 @@ svn checkout https://github.com/destan19/OpenAppFilter/trunk package/lean/OpenAp
 #svn checkout https://github.com/project-openwrt/BaiduPCS-Web/trunk package/lean/BaiduPCS-Web
 #sed -i 's/3.6.8/3.7.0/g' package/lean/BaiduPCS-Web/BaiduPCS-Web/Makefile
 svn checkout https://github.com/tty228/luci-app-serverchan/trunk package/lean/luci-app-serverchan
-#svn checkout https://github.com/happyzhang1995/openwrt-adguardhome/trunk package/lean/openwrt-adguardhome
-#svn checkout https://github.com/happyzhang1995/luci-app-adguardhome/trunk package/lean/luci-app-adguardhome
+svn checkout https://github.com/happyzhang1995/openwrt-adguardhome/trunk package/lean/openwrt-adguardhome
+svn checkout https://github.com/happyzhang1995/luci-app-adguardhome/trunk package/lean/luci-app-adguardhome
 svn checkout https://github.com/stamilo/luci-app-fullconenat/trunk package/lean/luci-app-fullconenat
 sed -i 's/NAT类型-Full cone NAT/NAT类型/g' package/lean/luci-app-fullconenat/po/zh-cn/fullconenat.po
 svn checkout https://github.com/LGA1150/openwrt-fullconenat/trunk package/lean/openwrt-fullconenat
 svn checkout https://github.com/Leo-Jo-My/luci-app-ssr-plus-jo/trunk package/lean/luci-app-ssr-plus-jo
 svn checkout https://github.com/Leo-Jo-My/luci-app-vssr-coexist/trunk package/lean/luci-app-vssr-coexist
-svn checkout https://github.com/Leo-Jo-My/luci-app-vssr/trunk package/lean/luci-app-vssr
+#svn checkout https://github.com/Leo-Jo-My/luci-app-vssr/trunk package/lean/luci-app-vssr
 svn checkout https://github.com/Leo-Jo-My/my/trunk package/lean/my
 svn checkout https://github.com/pymumu/smartdns/trunk package/lean/smartdns
 svn checkout https://github.com/pymumu/luci-app-smartdns/trunk package/lean/luci-app-smartdns
 svn checkout https://github.com/lisaac/luci-app-diskman/trunk package/lean/luci-app-diskman
 mkdir package/lean/parted
 mv package/lean/luci-app-diskman/Parted.Makefile package/lean/parted/Makefile
-sed -i 's/DiskMan 磁盘管理/磁盘管理/g' package/lean/luci-app-diskman/po/zh-cn/diskman.po
+#sed -i 's/DiskMan 磁盘管理/磁盘管理/g' package/lean/luci-app-diskman/po/zh-cn/diskman.po
 svn checkout https://github.com/rufengsuixing/luci-app-syncdial/trunk package/lean/luci-app-syncdial
 #rm -rf feeds/packages/libs/libuv/
 #rm -rf package/libs/openssl/
 #svn checkout https://github.com/openwrt/packages/trunk/libs/libuv feeds/packages/libs/libuv/
 #svn checkout https://github.com/openwrt/openwrt/trunk/package/libs/openssl package/libs/openssl/
 #rm -rf feeds/luci/applications/luci-app-aria2/
-#svn checkout https://github.com/kuoruan/openwrt-feeds/trunk/luci-app-aria2 package/lean/luci-app-aria2
+#svn checkout https://github.com/kuoruan/openwrt-feeds/trunk/luci-app-aria2 feeds/luci/applications/luci-app-aria2
+sed -i 's/services/nas/g' feeds/luci/applications/luci-app-aria2/luasrc/controller/aria2.lua
+sed -i 's/services/nas/g' feeds/luci/applications//luci-app-aria2/luasrc/view/aria2/log_template.htm
+sed -i 's/services/nas/g' feeds/luci/applications//luci-app-aria2/luasrc/view/aria2/settings_header.htm
 #rm -rf feeds/packages/net/ariang/
-#svn checkout https://github.com/openwrt/packages/trunk/net/ariang package/lean/ariang
+#svn checkout https://github.com/openwrt/packages/trunk/net/ariang feeds/packages/net/ariang
+svn checkout https://github.com/jerrykuku/luci-app-vssr/trunk package/lean/luci-app-vssr
+svn checkout https://github.com/jerrykuku/lua-maxminddb/trunk package/lean/lua-maxminddb
+#svn checkout https://github.com/openwrt/packages/trunk/libs/libmaxminddb feeds/packages/libs/libmaxminddb
 #svn checkout https://github.com/openwrt/packages/trunk/utils/zstd package/lean/zstd
 svn checkout https://github.com/lllrrr/frpmod/trunk package/lean/frpmod
 rm -rf feeds/packages/net/kcptun/
