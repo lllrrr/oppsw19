@@ -105,7 +105,7 @@ svn checkout https://github.com/pymumu/luci-app-smartdns/trunk package/lean/luci
 svn checkout https://github.com/lisaac/luci-app-diskman/trunk package/lean/luci-app-diskman
 mkdir package/lean/parted
 mv package/lean/luci-app-diskman/Parted.Makefile package/lean/parted/Makefile
-#sed -i 's/DiskMan 磁盘管理/磁盘管理/g' package/lean/luci-app-diskman/po/zh-cn/diskman.po
+sed -i 's/DiskMan //g' package/lean/luci-app-diskman/po/zh-cn/diskman.po
 svn checkout https://github.com/rufengsuixing/luci-app-syncdial/trunk package/lean/luci-app-syncdial
 #rm -rf feeds/packages/libs/libuv/
 #rm -rf package/libs/openssl/
@@ -114,8 +114,8 @@ svn checkout https://github.com/rufengsuixing/luci-app-syncdial/trunk package/le
 #rm -rf feeds/luci/applications/luci-app-aria2/
 #svn checkout https://github.com/kuoruan/openwrt-feeds/trunk/luci-app-aria2 feeds/luci/applications/luci-app-aria2
 sed -i 's/services/nas/g' feeds/luci/applications/luci-app-aria2/luasrc/controller/aria2.lua
-sed -i 's/services/nas/g' feeds/luci/applications//luci-app-aria2/luasrc/view/aria2/log_template.htm
-sed -i 's/services/nas/g' feeds/luci/applications//luci-app-aria2/luasrc/view/aria2/settings_header.htm
+sed -i 's/services/nas/g' feeds/luci/applications/luci-app-aria2/luasrc/view/aria2/log_template.htm
+sed -i 's/services/nas/g' feeds/luci/applications/luci-app-aria2/luasrc/view/aria2/settings_header.htm
 #rm -rf feeds/packages/net/ariang/
 #svn checkout https://github.com/openwrt/packages/trunk/net/ariang feeds/packages/net/ariang
 svn checkout https://github.com/jerrykuku/luci-app-vssr/trunk package/lean/luci-app-vssr
