@@ -81,8 +81,8 @@ svn checkout https://github.com/rosywrt/luci-theme-rosy/trunk/luci-theme-rosy pa
 #svn checkout https://github.com/maxlicheng/luci-app-unblockmusic/trunk package/lean/luci-app-unblockmusic
 svn checkout https://github.com/project-openwrt/luci-app-unblockneteasemusic/trunk package/lean/luci-app-unblockneteasemusic
 sed -i 's/解除网易云音乐播放限制/解锁网易云/g' package/lean/luci-app-unblockneteasemusic/luasrc/controller/unblockneteasemusic.lua
-svn checkout https://github.com/project-openwrt/luci-app-unblockneteasemusic-go/trunk package/lean/luci-app-unblockneteasemusic-go
-sed -i 's/解除网易云音乐播放限制/解锁网易云/g' package/lean/luci-app-unblockneteasemusic-go/luci-app-unblockneteasemusic-go/luasrc/controller/unblockneteasemusic-go.lua
+#svn checkout https://github.com/project-openwrt/luci-app-unblockneteasemusic-go/trunk package/lean/luci-app-unblockneteasemusic-go
+#sed -i 's/解除网易云音乐播放限制/解锁网易云/g' package/lean/luci-app-unblockneteasemusic-go/luci-app-unblockneteasemusic-go/luasrc/controller/unblockneteasemusic-go.lua
 svn checkout https://github.com/project-openwrt/luci-app-unblockneteasemusic-mini/trunk package/lean/luci-app-unblockneteasemusic-mini
 sed -i 's/解除网易云音乐播放限制/解锁网易云/g' package/lean/luci-app-unblockneteasemusic-mini/luasrc/controller/unblockneteasemusic-mini.lua
 #svn checkout https://github.com/frainzy1477/clash/trunk package/lean/clash
@@ -100,7 +100,7 @@ svn checkout https://github.com/LGA1150/openwrt-fullconenat/trunk package/lean/o
 svn checkout https://github.com/Leo-Jo-My/luci-app-ssr-plus-jo/trunk package/lean/luci-app-ssr-plus-jo
 svn checkout https://github.com/Leo-Jo-My/luci-app-vssr-coexist/trunk package/lean/luci-app-vssr-coexist
 #svn checkout https://github.com/Leo-Jo-My/luci-app-vssr/trunk package/lean/luci-app-vssr
-svn checkout https://github.com/Leo-Jo-My/my/trunk package/lean/my
+#svn checkout https://github.com/Leo-Jo-My/my/trunk package/lean/my
 svn checkout https://github.com/pymumu/smartdns/trunk package/lean/smartdns
 svn checkout https://github.com/pymumu/luci-app-smartdns/trunk package/lean/luci-app-smartdns
 svn checkout https://github.com/lisaac/luci-app-diskman/trunk package/lean/luci-app-diskman
