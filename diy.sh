@@ -18,7 +18,7 @@ sed -i 's/16384/65536/g' package/kernel/linux/files/sysctl-nf-conntrack.conf
 #sed -i 's/(info.swap/Math.floor(info.swap/g' feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_status/index.htm
 #sed -i 's/luci-theme-bootstrap/luci-theme-argon-dark-mod/g' feeds/luci/collections/luci/Makefile
 #sed -i 's/+kmod-nls-base @BUILD_PATENTED/+kmod-nls-base/g' feeds/packages/kernel/exfat-nofuse/Makefile
-sed -i 's/IMG_PREFIX:=$(VERSION_DIST_SANITIZED)/IMG_PREFIX:=R9.1-$(shell date +%F-%H)-$(VERSION_DIST_SANITIZED)/g' include/image.mk
+sed -i 's/IMG_PREFIX:=$(VERSION_DIST_SANITIZED)/IMG_PREFIX:=R9.2-$(shell date +%F-%H)-$(VERSION_DIST_SANITIZED)/g' include/image.mk
 
 svn checkout https://github.com/coolsnowwolf/lede/trunk/package/lean/ddns-scripts_aliyun package/lean/ddns-scripts_aliyun
 svn checkout https://github.com/coolsnowwolf/lede/trunk/package/lean/ddns-scripts_dnspod package/lean/ddns-scripts_dnspod
@@ -128,5 +128,5 @@ rm -rf feeds/packages/net/kcptun/
 cp ../target.mk include/
 cp ../luci.mk feeds/luci/
 cp ../zzz-default-settings package/lean/default-settings/files/
-sed -i "s/8.3.19.0410/9.1.$(date "+%y.%m%d.%H")/g" package/lean/default-settings/files/zzz-default-settings
-sed -i "s/8.3.19.0410/9.1.$(date "+%y.%m%d.%H")/g" files/etc/banner
+sed -i "s/8.3.19.0410/9.2.$(date "+%y.%m%d.%H")/g" package/lean/default-settings/files/zzz-default-settings
+sed -i "s/8.3.19.0410/9.2.$(date "+%y.%m%d.%H")/g" files/etc/banner

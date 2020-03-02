@@ -6,7 +6,7 @@
 # Blog: https://p3terx.com
 #=================================================
 
-name: X86 Openwrt
+name: X86 Openwrt 192
 
 on:
   release:
@@ -23,7 +23,7 @@ on:
 
 env:
   REPO_URL: https://github.com/openwrt/openwrt
-  REPO_BRANCH: v19.07.1
+  REPO_BRANCH: v19.07.2
   CONFIG_FILE: x86.config
   DIY_SH: diy.sh
   SSH_ACTIONS: false
@@ -115,5 +115,5 @@ jobs:
       uses: actions/upload-artifact@master
       if: steps.organize.outputs.status == 'success' && !cancelled()
       with:
-        name: OpenWrt_X86
+        name: OpenWrt_X86_192
         path: ./artifact/
