@@ -121,7 +121,7 @@ svn checkout https://github.com/rufengsuixing/luci-app-syncdial/trunk package/le
 #svn checkout https://github.com/openwrt/packages/trunk/net/ariang feeds/packages/net/ariang
 svn checkout https://github.com/jerrykuku/luci-app-vssr/trunk package/lean/luci-app-vssr
 svn checkout https://github.com/jerrykuku/lua-maxminddb/trunk package/lean/lua-maxminddb
-#svn checkout https://github.com/openwrt/packages/trunk/libs/libmaxminddb feeds/packages/libs/libmaxminddb
+#svn checkout https://github.com/openwrt/packages/trunk/libs/libmaxminddb package/lean/libmaxminddb
 #svn checkout https://github.com/openwrt/packages/trunk/utils/zstd package/lean/zstd
 svn checkout https://github.com/lllrrr/frpmod/trunk package/lean/frpmod
 rm -rf feeds/packages/net/kcptun/
