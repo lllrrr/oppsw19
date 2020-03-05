@@ -58,9 +58,10 @@ svn checkout https://github.com/coolsnowwolf/lede/trunk/package/lean/baidupcs-we
 svn checkout https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-baidupcs-web package/lean/luci-app-baidupcs-web
 svn checkout https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-zerotier package/lean/luci-app-zerotier
 svn checkout https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-lib-fs package/lean/luci-lib-fs
-svn checkout https://github.com/Lienol/openwrt-package/trunk/lienol package/lienol/lienol
-svn checkout https://github.com/Lienol/openwrt-package/trunk/others package/lienol/others
-svn checkout https://github.com/Lienol/openwrt-package/trunk/package package/lienol/package
+svn checkout https://github.com/coolsnowwolf/lede/trunk/package/lean/microsocks package/lean/microsocks
+svn checkout https://github.com/Lienol/openwrt-package/trunk package/lienol
+#svn checkout https://github.com/Lienol/openwrt-package/trunk/others package/lienol/others
+#svn checkout https://github.com/Lienol/openwrt-package/trunk/package package/lienol/package
 #svn checkout https://github.com/tsl0922/ttyd/trunk/openwrt/ttyd package/lean/ttyd
 #svn checkout https://github.com/tsl0922/ttyd/trunk/openwrt/luci-app-terminal package/lean/luci-app-terminal
 #sed -i 's_../../_$(TOPDIR)/feeds/luci/_' package/lean/luci-app-terminal/Makefile
