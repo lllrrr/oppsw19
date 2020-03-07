@@ -59,6 +59,7 @@ svn checkout https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-ba
 svn checkout https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-zerotier package/lean/luci-app-zerotier
 svn checkout https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-lib-fs package/lean/luci-lib-fs
 svn checkout https://github.com/coolsnowwolf/lede/trunk/package/lean/microsocks package/lean/microsocks
+svn checkout https://github.com/coolsnowwolf/lede/trunk/package/lean/redsocks2 package/lean/redsocks2
 svn checkout https://github.com/Lienol/openwrt-package/trunk package/lienol
 #svn checkout https://github.com/Lienol/openwrt-package/trunk/others package/lienol/others
 #svn checkout https://github.com/Lienol/openwrt-package/trunk/package package/lienol/package
