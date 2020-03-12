@@ -28,9 +28,10 @@ svn checkout https://github.com/coolsnowwolf/lede/trunk/package/lean/adbyby pack
 svn checkout https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-adbyby-plus package/lean/luci-app-adbyby-plus
 svn checkout https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-autoreboot package/lean/luci-app-autoreboot
 svn checkout https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-flowoffload package/lean/luci-app-flowoffload
-svn checkout https://github.com/coolsnowwolf/lede/trunk/package/lean/frpc package/lean/frpc
-sed -i 's/0.31.1/0.31.2/g' package/lean/frpc/Makefile
+svn checkout https://github.com/coolsnowwolf/lede/trunk/package/lean/frp package/lean/frp
+sed -i 's/0.31.2/0.32.0/g' package/lean/frp/Makefile
 svn checkout https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-frpc package/lean/luci-app-frpc
+svn checkout https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-frps package/lean/luci-app-frps
 svn checkout https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-mwan3helper package/lean/luci-app-mwan3helper
 svn checkout https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-ssr-plus package/lean/luci-app-ssr-plus
 svn checkout https://github.com/coolsnowwolf/lede/trunk/package/lean/srelay package/lean/srelay
