@@ -109,7 +109,7 @@ svn checkout https://github.com/pymumu/luci-app-smartdns/trunk package/lean/luci
 svn checkout https://github.com/lisaac/luci-app-diskman/trunk package/lean/luci-app-diskman
 mkdir package/lean/parted
 mv package/lean/luci-app-diskman/Parted.Makefile package/lean/parted/Makefile
-sed -i 's/DiskMan //g' package/lean/luci-app-diskman/po/zh-cn/diskman.po
+sed -i 's/DiskMan 磁盘管理/磁盘管理/g' package/lean/luci-app-diskman/po/zh-cn/diskman.po
 svn checkout https://github.com/rufengsuixing/luci-app-syncdial/trunk package/lean/luci-app-syncdial
 #rm -rf feeds/packages/libs/libuv/
 #rm -rf package/libs/openssl/
