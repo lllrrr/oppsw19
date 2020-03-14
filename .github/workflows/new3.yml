@@ -6,7 +6,7 @@
 # Blog: https://p3terx.com
 #=================================================
 
-name: Newifi3 OpenWrt 192
+name: Newifi3 OpenWrt 19
 
 on:
   release:
@@ -23,7 +23,7 @@ on:
 
 env:
   REPO_URL: https://github.com/openwrt/openwrt
-  REPO_BRANCH: v19.07.2
+  REPO_BRANCH: openwrt-19.07
   CONFIG_FILE: 7621.config
   DIY_SH: diy.sh
   SSH_ACTIONS: false
@@ -115,5 +115,5 @@ jobs:
       uses: actions/upload-artifact@master
       if: steps.organize.outputs.status == 'success' && !cancelled()
       with:
-        name: OpenWrt_Newifi3_192
+        name: OpenWrt_Newifi3_19
         path: ./artifact/

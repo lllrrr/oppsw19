@@ -61,6 +61,10 @@ svn checkout https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-ze
 svn checkout https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-lib-fs package/lean/luci-lib-fs
 svn checkout https://github.com/coolsnowwolf/lede/trunk/package/lean/microsocks package/lean/microsocks
 svn checkout https://github.com/coolsnowwolf/lede/trunk/package/lean/redsocks2 package/lean/redsocks2
+svn checkout https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-unblockmusic package/lean/luci-app-unblockmusic
+svn checkout https://github.com/coolsnowwolf/lede/trunk/package/lean/UnblockNeteaseMusic package/lean/UnblockNeteaseMusic
+svn checkout https://github.com/coolsnowwolf/lede/trunk/package/lean/UnblockNeteaseMusicGo package/lean/UnblockNeteaseMusicGo
+sed -i 's/解锁网易云灰色歌曲/解锁网易云/g' package/lean/luci-app-unblockmusic/po/zh-cn/unblockmusic.po
 svn checkout https://github.com/Lienol/openwrt-package/trunk package/lienol
 #svn checkout https://github.com/Lienol/openwrt-package/trunk/others package/lienol/others
 #svn checkout https://github.com/Lienol/openwrt-package/trunk/package package/lienol/package
@@ -82,12 +86,12 @@ svn checkout https://github.com/rosywrt/luci-theme-rosy/trunk/luci-theme-rosy pa
 #svn checkout https://github.com/kuoruan/openwrt-kcptun/trunk package/lean/openwrt-kcptun
 #svn checkout https://github.com/kuoruan/luci-app-kcptun/trunk package/lean/luci-app-kcptun
 #svn checkout https://github.com/maxlicheng/luci-app-unblockmusic/trunk package/lean/luci-app-unblockmusic
-svn checkout https://github.com/project-openwrt/luci-app-unblockneteasemusic/trunk package/lean/luci-app-unblockneteasemusic
-sed -i 's/解除网易云音乐播放限制/解锁网易云/g' package/lean/luci-app-unblockneteasemusic/luasrc/controller/unblockneteasemusic.lua
+#svn checkout https://github.com/project-openwrt/luci-app-unblockneteasemusic/trunk package/lean/luci-app-unblockneteasemusic
+#sed -i 's/解除网易云音乐播放限制/解锁网易云/g' package/lean/luci-app-unblockneteasemusic/luasrc/controller/unblockneteasemusic.lua
 #svn checkout https://github.com/project-openwrt/luci-app-unblockneteasemusic-go/trunk package/lean/luci-app-unblockneteasemusic-go
 #sed -i 's/解除网易云音乐播放限制/解锁网易云/g' package/lean/luci-app-unblockneteasemusic-go/luci-app-unblockneteasemusic-go/luasrc/controller/unblockneteasemusic-go.lua
-svn checkout https://github.com/project-openwrt/luci-app-unblockneteasemusic-mini/trunk package/lean/luci-app-unblockneteasemusic-mini
-sed -i 's/解除网易云音乐播放限制/解锁网易云/g' package/lean/luci-app-unblockneteasemusic-mini/luasrc/controller/unblockneteasemusic-mini.lua
+#svn checkout https://github.com/project-openwrt/luci-app-unblockneteasemusic-mini/trunk package/lean/luci-app-unblockneteasemusic-mini
+#sed -i 's/解除网易云音乐播放限制/解锁网易云/g' package/lean/luci-app-unblockneteasemusic-mini/luasrc/controller/unblockneteasemusic-mini.lua
 #svn checkout https://github.com/frainzy1477/clash/trunk package/lean/clash
 #svn checkout https://github.com/frainzy1477/luci-app-clash/trunk package/lean/luci-app-clash
 svn checkout https://github.com/vernesong/OpenClash/trunk package/lean/OpenClash

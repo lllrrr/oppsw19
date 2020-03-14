@@ -6,7 +6,7 @@
 # Blog: https://p3terx.com
 #=================================================
 
-name: N1 OpenWrt 192
+name: N1 OpenWrt 19
 
 on:
   release:
@@ -23,7 +23,7 @@ on:
 
 env:
   REPO_URL: https://github.com/openwrt/openwrt
-  REPO_BRANCH: v19.07.2
+  REPO_BRANCH: openwrt-19.07
   CONFIG_FILE: n1.config
   DIY_SH: diy.sh
   SSH_ACTIONS: false
@@ -125,5 +125,5 @@ jobs:
       uses: actions/upload-artifact@master
       if: steps.organize.outputs.status == 'success' && !cancelled()
       with:
-        name: OpenWrt_N1_192
+        name: OpenWrt_N1_19
         path: ./artifact/
