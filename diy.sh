@@ -119,6 +119,9 @@ svn checkout https://github.com/rufengsuixing/luci-app-syncdial/trunk package/le
 #rm -rf package/libs/openssl/
 #svn checkout https://github.com/openwrt/packages/trunk/libs/libuv feeds/packages/libs/libuv/
 #svn checkout https://github.com/openwrt/openwrt/trunk/package/libs/openssl package/libs/openssl/
+svn checkout https://github.com/coolsnowwolf/lede/trunk/tools/ucl tools/ucl
+svn checkout https://github.com/coolsnowwolf/lede/trunk/tools/upx tools/upx
+cp ../Makefile tools/
 #rm -rf feeds/luci/applications/luci-app-aria2/
 #svn checkout https://github.com/kuoruan/openwrt-feeds/trunk/luci-app-aria2 feeds/luci/applications/luci-app-aria2
 #sed -i 's/services/nas/g' feeds/luci/applications/luci-app-aria2/luasrc/controller/aria2.lua
