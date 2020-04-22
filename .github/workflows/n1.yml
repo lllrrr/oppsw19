@@ -9,6 +9,8 @@
 name: N1 OpenWrt 19
 
 on:
+  repository_dispatch:
+    types: run
   release:
     types: published
   push:
@@ -29,6 +31,8 @@ env:
   SSH_ACTIONS: false
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
+  UPLOAD_COWTRANSFER: false
+  UPLOAD_WETRANSFER: false
   TZ: Asia/Shanghai
 
 jobs:
@@ -47,9 +51,10 @@ jobs:
         sudo swapoff /swapfile
         sudo rm -rf /swapfile /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc
         sudo -E apt-get -qq update
-        sudo -E apt-get -qq install build-essential asciidoc binutils bzip2 gawk gettext git libncurses5-dev libz-dev patch python3 unzip zlib1g-dev lib32gcc1 libc6-dev-i386 subversion flex uglifyjs git-core gcc-multilib p7zip p7zip-full msmtp libssl-dev texinfo libglib2.0-dev xmlto qemu-utils upx libelf-dev autoconf automake libtool autopoint device-tree-compiler g++-multilib
+        sudo -E apt-get -qq install build-essential asciidoc binutils bzip2 gawk gettext git libncurses5-dev libz-dev patch unzip zlib1g-dev lib32gcc1 libc6-dev-i386 subversion flex uglifyjs gcc-multilib g++-multilib p7zip p7zip-full msmtp libssl-dev texinfo libglib2.0-dev xmlto qemu-utils upx libelf-dev autoconf automake libtool autopoint device-tree-compiler antlr3 gperf
         sudo -E apt-get -qq autoremove --purge
         sudo -E apt-get -qq clean
+        sudo timedatectl set-timezone "$TZ"
         curl -fsSL https://raw.githubusercontent.com/P3TERX/dotfiles/master/.bashrc >> ~/.bashrc
 
     - name: Clone source code
@@ -77,7 +82,7 @@ jobs:
 
     - name: SSH connection to Actions
       uses: P3TERX/debugger-action@master
-      if: env.SSH_ACTIONS == 'true'
+      if: env.SSH_ACTIONS == 'true' || contains(github.event.action, 'ssh')
 
     - name: Download package
       id: package
@@ -95,6 +100,7 @@ jobs:
         echo -e "$(nproc) thread compile"
         make -j$(nproc) || make -j1 V=s
         echo "::set-output name=status::success"
+        echo "::set-env name=firmware_name::$(date "+%y.%m.%d")-N1-19-openwrt-firmware"
 
     - name: Upload bin directory
       uses: actions/upload-artifact@master
@@ -107,23 +113,24 @@ jobs:
       id: organize
       if: env.UPLOAD_FIRMWARE == 'true' && !cancelled()
       run: |
-        rm -rf mknop/armbian/n1/rootfs/etc/modules.d/*
-        mv phicomm-n1-wireless/* mknop/armbian/n1/rootfs/etc/modules.d/
+        mkdir mknop/armbian/phicomm-n1/root/etc/modules.d/
+        mv phicomm-n1-wireless/* mknop/armbian/phicomm-n1/root/etc/modules.d/
         rm -rf mknop/openwrt/*
         find openwrt/bin/targets/ -name "*rootfs*tar*gz*" | xargs -i mv -f {} mknop/openwrt/
-        mv mk.sh mknop/mk.sh        
-        cd mknop && chmod +x mk.sh
-        ./mk.sh
+        cd mknop
+        sudo ./make -d
         tar -czvf out/n1.tar.gz out/*.img
-        rm -rf ../artifact/
-        mkdir -p ../artifact/
-        find openwrt/bin/targets/ -name "feeds.buildinfo" | xargs -i mv -f {} ../artifact/
-        find out/ -name "n1.tar.gz" | xargs -i mv -f {} ../artifact/
+        cd -
+        rm -rf ./artifact/
+        mkdir -p ./artifact/
+        find openwrt/bin/targets/ -name "config.seed" | xargs -i mv -f {} ./artifact/
+        find openwrt/bin/targets/ -name "*rootfs*tar*gz*" | xargs -i mv -f {} ./artifact/
+        find mknop/out/ -name "n1.tar.gz" | xargs -i mv -f {} ./artifact/
         echo "::set-output name=status::success"
 
     - name: Upload firmware directory
       uses: actions/upload-artifact@master
       if: steps.organize.outputs.status == 'success' && !cancelled()
       with:
-        name: OpenWrt_N1_19
+        name: ${{ env.firmware_name }}
         path: ./artifact/

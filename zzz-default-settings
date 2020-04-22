@@ -55,7 +55,7 @@ sed -i '/Powered by/d' /usr/lib/lua/luci/view/themes/leo1/footer.htm
 sed -i '/<%=pcdata(ver.distname)%> <%=pcdata(ver.distversion)%>/d' /usr/lib/lua/luci/view/admin_status/index.htm
 sed -i 's/<%=pcdata(ver.luciname)%> (<%=pcdata(ver.luciversion)%>)/<%=pcdata(ver.distname)%> <%=pcdata(ver.distversion)%>/g' /usr/lib/lua/luci/view/admin_status/index.htm
 
-sed -i 's/downloads.openwrt.org/mirrors.tuna.tsinghua.edu.cn\/lede/g' /etc/opkg/distfeeds.conf
+sed -i 's/downloads.openwrt.org/mirrors.tuna.tsinghua.edu.cn\/openwrt/g' /etc/opkg/distfeeds.conf
 
 sed -i 's/invalid users/#invalid users/g' /etc/samba/smb.conf.template
 
