@@ -71,7 +71,7 @@ git clone https://github.com/lllrrr/openwrt-Li package/lienol
 #svn co https://github.com/tsl0922/ttyd/trunk/openwrt/ttyd package/lean/ttyd
 #svn co https://github.com/tsl0922/ttyd/trunk/openwrt/luci-app-terminal package/lean/luci-app-terminal
 #sed -i 's_../../_$(TOPDIR)/feeds/luci/_' package/lean/luci-app-terminal/Makefile
-svn co https://github.com/rosywrt/luci-theme-rosy/trunk/luci-theme-rosy package/lean/luci-theme-rosy
+#svn co https://github.com/rosywrt/luci-theme-rosy/trunk/luci-theme-rosy package/lean/luci-theme-rosy
 #svn co https://github.com/jerrykuku/luci-theme-argon/trunk package/lean/luci-theme-argon
 #svn co https://github.com/john-shine/luci-theme-darkmatter/trunk/luci/themes/luci-theme-darkmatter package/lean/luci-theme-darkmatter
 #sed -i 's_../../_$(TOPDIR)/feeds/luci/_' package/lean/luci-theme-darkmatter/Makefile
