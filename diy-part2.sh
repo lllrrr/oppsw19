@@ -33,7 +33,8 @@ sed -i 's/0.31.2/0.32.0/g' package/lean/frp/Makefile
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-frpc package/lean/luci-app-frpc
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-frps package/lean/luci-app-frps
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-mwan3helper package/lean/luci-app-mwan3helper
-svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-ssr-plus package/lean/luci-app-ssr-plus
+#svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-ssr-plus package/lean/luci-app-ssr-plus
+git clone https://github.com/fw876/helloworld package/lean/helloworld
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/srelay package/lean/srelay
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/tcpping package/lean/tcpping
 #svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/pdnsd-alt/ package/lean/
@@ -64,7 +65,7 @@ svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-unblockm
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/UnblockNeteaseMusic package/lean/UnblockNeteaseMusic
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/UnblockNeteaseMusicGo package/lean/UnblockNeteaseMusicGo
 sed -i 's/解锁网易云灰色歌曲/解锁网易云/g' package/lean/luci-app-unblockmusic/po/zh-cn/unblockmusic.po
-svn co https://github.com/lllrrr/openwrt-Li/trunk package/lienol
+git clone https://github.com/lllrrr/openwrt-Li package/lienol
 #svn co https://github.com/Lienol/openwrt-package/trunk/others package/lienol/others
 #svn co https://github.com/Lienol/openwrt-package/trunk/package package/lienol/package
 #svn co https://github.com/tsl0922/ttyd/trunk/openwrt/ttyd package/lean/ttyd
@@ -93,31 +94,29 @@ svn co https://github.com/rosywrt/luci-theme-rosy/trunk/luci-theme-rosy package/
 #sed -i 's/解除网易云音乐播放限制/解锁网易云/g' package/lean/luci-app-unblockneteasemusic-mini/luasrc/controller/unblockneteasemusic-mini.lua
 #svn co https://github.com/frainzy1477/clash/trunk package/lean/clash
 #svn co https://github.com/frainzy1477/luci-app-clash/trunk package/lean/luci-app-clash
-svn co https://github.com/vernesong/OpenClash/trunk package/lean/OpenClash
-svn co https://github.com/destan19/OpenAppFilter/trunk package/lean/OpenAppFilter
+git clone https://github.com/vernesong/OpenClash package/lean/OpenClash
+git clone https://github.com/destan19/OpenAppFilter package/lean/OpenAppFilter
 #svn co https://github.com/project-openwrt/BaiduPCS-Web/trunk package/lean/BaiduPCS-Web
 #sed -i 's/3.6.8/3.7.0/g' package/lean/BaiduPCS-Web/BaiduPCS-Web/Makefile
-svn co https://github.com/tty228/luci-app-serverchan/trunk package/lean/luci-app-serverchan
-svn co https://github.com/happyzhang1995/openwrt-adguardhome/trunk package/lean/openwrt-adguardhome
-svn co https://github.com/rufengsuixing/luci-app-adguardhome/trunk  package/lean/luci-app-adguardhome
-svn co https://github.com/stamilo/luci-app-fullconenat/trunk package/lean/luci-app-fullconenat
+git clone https://github.com/tty228/luci-app-serverchan package/lean/luci-app-serverchan
+#git clone https://github.com/happyzhang1995/openwrt-adguardhome package/lean/openwrt-adguardhome
+git clone https://github.com/rufengsuixing/luci-app-adguardhome package/lean/luci-app-adguardhome
+git clone https://github.com/stamilo/luci-app-fullconenat package/lean/luci-app-fullconenat
 sed -i 's/NAT类型-Full cone NAT/NAT类型/g' package/lean/luci-app-fullconenat/po/zh-cn/fullconenat.po
-svn co https://github.com/LGA1150/openwrt-fullconenat/trunk package/lean/openwrt-fullconenat
-svn co https://github.com/Leo-Jo-My/luci-app-ssr-plus-jo/trunk package/lean/luci-app-ssr-plus-jo
-svn co https://github.com/Leo-Jo-My/luci-app-vssr-coexist/trunk package/lean/luci-app-vssr-coexist
+git clone https://github.com/LGA1150/openwrt-fullconenat package/lean/openwrt-fullconenat
+#svn co https://github.com/Leo-Jo-My/luci-app-ssr-plus-jo/trunk package/lean/luci-app-ssr-plus-jo
+#svn co https://github.com/Leo-Jo-My/luci-app-vssr-coexist/trunk package/lean/luci-app-vssr-coexist
 #svn co https://github.com/Leo-Jo-My/luci-app-vssr/trunk package/lean/luci-app-vssr
 #svn co https://github.com/Leo-Jo-My/my/trunk package/lean/my
-svn co https://github.com/pymumu/smartdns/trunk package/lean/smartdns
-svn co https://github.com/pymumu/luci-app-smartdns/trunk package/lean/luci-app-smartdns
-svn co https://github.com/lisaac/luci-app-diskman/trunk package/lean/luci-app-diskman
+git clone https://github.com/lisaac/luci-app-diskman package/lean/luci-app-diskman
 mkdir package/lean/parted
 mv package/lean/luci-app-diskman/Parted.Makefile package/lean/parted/Makefile
 sed -i 's/DiskMan 磁盘管理/磁盘管理/g' package/lean/luci-app-diskman/po/zh-cn/diskman.po
-svn co https://github.com/rufengsuixing/luci-app-syncdial/trunk package/lean/luci-app-syncdial
+git clone https://github.com/rufengsuixing/luci-app-syncdial package/lean/luci-app-syncdial
 #rm -rf feeds/packages/libs/libuv/
 #rm -rf package/libs/openssl/
-#svn co https://github.com/openwrt/packages/trunk/libs/libuv feeds/packages/libs/libuv/
-#svn co https://github.com/openwrt/openwrt/trunk/package/libs/openssl package/libs/openssl/
+#svn co https://github.com/openwrt/packages/branches/openwrt-19.07/libs/libuv feeds/packages/libs/libuv/
+#svn co https://github.com/openwrt/openwrt/branches/openwrt-19.07/package/libs/openssl package/libs/openssl/
 svn co https://github.com/coolsnowwolf/lede/trunk/tools/ucl tools/ucl
 svn co https://github.com/coolsnowwolf/lede/trunk/tools/upx tools/upx
 cp ../Makefile tools/
@@ -128,14 +127,14 @@ cp ../Makefile tools/
 #sed -i 's/services/nas/g' feeds/luci/applications/luci-app-aria2/luasrc/view/aria2/settings_header.htm
 #rm -rf feeds/packages/net/ariang/
 #svn co https://github.com/openwrt/packages/trunk/net/ariang feeds/packages/net/ariang
-svn co https://github.com/jerrykuku/luci-app-vssr/trunk package/lean/luci-app-vssr
-svn co https://github.com/jerrykuku/lua-maxminddb/trunk package/lean/lua-maxminddb
-#svn co https://github.com/openwrt/packages/trunk/libs/libmaxminddb package/lean/libmaxminddb
-#svn co https://github.com/openwrt/packages/trunk/utils/zstd package/lean/zstd
-svn co https://github.com/lllrrr/frpmod/trunk package/lean/frpmod
+git clone https://github.com/jerrykuku/luci-app-vssr package/lean/luci-app-vssr
+git clone https://github.com/jerrykuku/lua-maxminddb package/lean/lua-maxminddb
+#svn co https://github.com/openwrt/packages/branches/openwrt-19.07/libs/libmaxminddb package/lean/libmaxminddb
+#svn co https://github.com/openwrt/packages/branches/openwrt-19.07/utils/zstd package/lean/zstd
+git clone https://github.com/lllrrr/frpmod package/lean/frpmod
 rm -rf feeds/packages/net/kcptun/
 rm -rf feeds/packages/utils/ttyd/
-svn co https://github.com/pymumu/openwrt-smartdns/trunk package/lean/openwrt-smartdns
+git clone https://github.com/pymumu/openwrt-smartdns package/lean/openwrt-smartdns
 git clone -b lede https://github.com/pymumu/luci-app-smartdns package/lean/luci-app-smartdns
 sed -i 's_../../_$(TOPDIR)/feeds/luci/_' package/lean/luci-app-smartdns/Makefile
 cp ../target.mk include/
