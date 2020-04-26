@@ -50,6 +50,8 @@ svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/npc package/lean/
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-nps package/lean/luci-app-nps
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/softethervpn5 package/lean/softethervpn5
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-wrtbwmon package/lean/luci-app-wrtbwmon
+git clone https://github.com/lienol/openwrt-package package/lienol
+git clone https://github.com/lllrrr/mypsw package/mypsw
 git clone https://github.com/lllrrr/myttyd package/lean
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/qt5 package/lean/qt5
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/qBittorrent package/lean/qBittorrent
