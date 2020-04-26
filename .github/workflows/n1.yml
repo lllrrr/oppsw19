@@ -1,0 +1,158 @@
+#=================================================
+# https://github.com/P3TERX/Actions-OpenWrt
+# Description: Build OpenWrt using GitHub Actions
+# Lisence: MIT
+# Author: P3TERX
+# Blog: https://p3terx.com
+#=================================================
+
+name: N1 Openwrt 19
+
+on:
+  repository_dispatch:
+    types: run
+  release:
+    types: published
+  push:
+    branches:
+      - master
+    paths:
+      - 'n1.config'
+  schedule:
+    - cron: 0 21 */15 * *
+  watch:
+    types: started
+
+env:
+  REPO_URL: https://github.com/openwrt/openwrt
+  REPO_BRANCH: openwrt-19.07
+  CONFIG_FILE: n1.config
+  DIY_P1_SH: diy-part1.sh
+  DIY_P2_SH: diy-part2.sh
+  SSH_ACTIONS: false
+  UPLOAD_BIN_DIR: false
+  UPLOAD_FIRMWARE: true
+  UPLOAD_COWTRANSFER: false
+  UPLOAD_WETRANSFER: false
+  TZ: Asia/Shanghai
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@master
+
+    - name: Initialization environment
+      env:
+        DEBIAN_FRONTEND: noninteractive
+      run: |
+        sudo swapoff /swapfile
+        sudo rm -rf /swapfile /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc
+        sudo -E apt-get -qq update
+        sudo -E apt-get -qq install build-essential asciidoc binutils bzip2 gawk gettext git libncurses5-dev libz-dev patch unzip zlib1g-dev lib32gcc1 libc6-dev-i386 subversion flex uglifyjs gcc-multilib g++-multilib p7zip p7zip-full msmtp libssl-dev texinfo libglib2.0-dev xmlto qemu-utils upx libelf-dev autoconf automake libtool autopoint device-tree-compiler antlr3 gperf
+        sudo -E apt-get -qq autoremove --purge
+        sudo -E apt-get -qq clean
+        sudo timedatectl set-timezone "$TZ"
+        curl -fsSL https://raw.githubusercontent.com/P3TERX/dotfiles/master/.bashrc >> ~/.bashrc
+
+    - name: Clone source code
+      run: git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
+
+    - name: Clone mknop code
+      run: git clone --depth 1 https://github.com/tuanqing/mknop -b master mknop
+     
+    - name: Clone N1wireless code
+      run: git clone --depth 1 https://github.com/maxlicheng/phicomm-n1-wireless -b master phicomm-n1-wireless
+
+    - name: Load custom feeds
+      run: |
+        chmod +x $DIY_P1_SH
+        cd openwrt
+        ../$DIY_P1_SH
+
+    - name: Update feeds
+      run: cd openwrt && ./scripts/feeds update -a
+
+    - name: Install feeds
+      run: cd openwrt && ./scripts/feeds install -a
+
+    - name: Load custom configuration
+      run: |
+        [ -e files ] && mv files openwrt/files
+        [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
+        chmod +x $DIY_P2_SH
+        cd openwrt
+        ../$DIY_P2_SH
+
+    - name: SSH connection to Actions
+      uses: P3TERX/debugger-action@master
+      if: env.SSH_ACTIONS == 'true' || contains(github.event.action, 'ssh')
+
+    - name: Download package
+      id: package
+      run: |
+        cd openwrt
+        make defconfig
+        make download -j8
+        find dl -size -1024c -exec ls -l {} \;
+        find dl -size -1024c -exec rm -f {} \;
+
+    - name: Compile the firmware
+      id: compile
+      run: |
+        cd openwrt
+        echo -e "$(nproc) thread compile"
+        make -j$(nproc) || make -j1 || make -j1 V=s
+        echo "::set-output name=status::success"
+        echo "::set-env name=firmware_name::$(date "+%y.%m.%d")-N1-19-openwrt-firmware"
+
+    - name: Upload bin directory
+      uses: actions/upload-artifact@master
+      if: steps.compile.outputs.status == 'success' && env.UPLOAD_BIN_DIR == 'true'
+      with:
+        name: OpenWrt_directory
+        path: openwrt/bin
+
+    - name: Organize files
+      id: organize
+      if: env.UPLOAD_FIRMWARE == 'true' && !cancelled()
+      run: |
+        mkdir mknop/armbian/phicomm-n1/root/etc/modules.d/
+        mv phicomm-n1-wireless/* mknop/armbian/phicomm-n1/root/etc/modules.d/
+        rm -rf mknop/openwrt/*
+        find openwrt/bin/targets/ -name "*rootfs*tar*gz*" | xargs -i mv -f {} mknop/openwrt/
+        cd mknop
+        sudo ./make -d
+        cd out
+        i=0
+        kernels=("4.18.7" "4.19.106" "5.4.20")
+        for x in ${kernels[*]}; do
+          cd $x
+          filename=$(ls)
+          filename=${filename%.*}
+          tar -czvf "$filename.tar.gz" *.img
+          rm -f *.img
+          cd ../
+          echo "::set-env name=firmware_$((++i))::$filename"
+        done
+
+    - name: Upload firmware @ kernel 4.18.7
+      uses: actions/upload-artifact@master
+      with:
+        name: ${{ env.firmware_1 }}
+        path: mknop/out/4.18.7
+      
+    - name: Upload firmware @ kernel 4.19.106
+      uses: actions/upload-artifact@master
+      with:
+        name: ${{ env.firmware_2 }}
+        path: mknop/out/4.19.106
+      
+    - name: Upload firmware @ kernel 5.4.20
+      uses: actions/upload-artifact@master
+      with:
+        name: ${{ env.firmware_3 }}
+        path: mknop/out/5.4.20
