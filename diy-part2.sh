@@ -120,13 +120,17 @@ git clone https://github.com/rufengsuixing/luci-app-syncdial package/lean/luci-a
 svn co https://github.com/coolsnowwolf/lede/trunk/tools/ucl tools/ucl
 svn co https://github.com/coolsnowwolf/lede/trunk/tools/upx tools/upx
 cp ../Makefile tools/
+rm -rf feeds/packages/net/aria2/
+svn co https://github.com/openwrt/packages/branches/openwrt-18.06/net/aria2 feeds/packages/net/aria2
+sed -i 's/1.33.0/1.33.1/g' feeds/packages/net/aria2/Makefile
+sed -i 's/996e3fc2fd07ce2dd517e20a1f79b8b3dbaa5c7e27953b5fc19dae38f3874b8c/skip/g' feeds/packages/net/aria2/Makefile
 rm -rf feeds/luci/applications/luci-app-aria2/
 svn co https://github.com/kuoruan/openwrt-feeds/trunk/luci-app-aria2 feeds/luci/applications/luci-app-aria2
 sed -i 's/services/nas/g' feeds/luci/applications/luci-app-aria2/luasrc/controller/aria2.lua
 sed -i 's/services/nas/g' feeds/luci/applications/luci-app-aria2/luasrc/view/aria2/log_template.htm
 sed -i 's/services/nas/g' feeds/luci/applications/luci-app-aria2/luasrc/view/aria2/settings_header.htm
-#rm -rf feeds/packages/net/ariang/
-#svn co https://github.com/openwrt/packages/trunk/net/ariang feeds/packages/net/ariang
+rm -rf feeds/packages/net/ariang/
+svn co https://github.com/openwrt/packages/trunk/net/ariang feeds/packages/net/ariang
 git clone https://github.com/jerrykuku/luci-app-vssr package/lean/luci-app-vssr
 git clone https://github.com/jerrykuku/lua-maxminddb package/lean/lua-maxminddb
 #svn co https://github.com/openwrt/packages/trunk/libs/libmaxminddb package/lean/libmaxminddb

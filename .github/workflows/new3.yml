@@ -6,7 +6,7 @@
 # Blog: https://p3terx.com
 #=================================================
 
-name: Newifi3 Openwrt 19
+name: Newifi3 OpenWrt 19
 
 on:
   repository_dispatch:
@@ -121,7 +121,7 @@ jobs:
         find openwrt/bin/targets/ -name "*sysupgrade*bin*" | xargs -i mv -f {} ./artifact/
         find openwrt/bin/targets/ -name "*rootfs*tar*gz*" | xargs -i mv -f {} ./artifact/
         find openwrt/bin/targets/ -name "sha256sums" | xargs -i mv -f {} ./artifact/
-        find openwrt/bin/targets/ -name "feeds.buildinfo" | xargs -i mv -f {} ./artifact/
+        find openwrt/bin/targets/ -name "config.buildinfo" | xargs -i mv -f {} ./artifact/
         echo "::set-output name=status::success"
 
     - name: Upload firmware directory
