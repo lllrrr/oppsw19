@@ -16,7 +16,7 @@ sed -i 's/16384/65536/g' package/kernel/linux/files/sysctl-nf-conntrack.conf
 #sed -i 's/(info.memory/Math.floor(info.memory/g' feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_status/index.htm
 #sed -i 's/(Math.floor/Math.floor(/g' feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_status/index.htm
 #sed -i 's/(info.swap/Math.floor(info.swap/g' feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_status/index.htm
-#sed -i 's/luci-theme-bootstrap/luci-theme-argon-dark-mod/g' feeds/luci/collections/luci/Makefile
+sed -i 's/luci-theme-bootstrap/luci-theme-argon-dark-mod/g' feeds/luci/collections/luci/Makefile
 #sed -i 's/+kmod-nls-base @BUILD_PATENTED/+kmod-nls-base/g' feeds/packages/kernel/exfat-nofuse/Makefile
 sed -i 's/IMG_PREFIX:=$(VERSION_DIST_SANITIZED)/IMG_PREFIX:=R9-$(shell date +%F-%H)-$(VERSION_DIST_SANITIZED)/g' include/image.mk
 
@@ -50,9 +50,6 @@ svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/npc package/lean/
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-nps package/lean/luci-app-nps
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/softethervpn5 package/lean/softethervpn5
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-wrtbwmon package/lean/luci-app-wrtbwmon
-git clone https://github.com/lienol/openwrt-package package/lienol
-git clone https://github.com/lllrrr/mypsw package/mypsw
-git clone https://github.com/lllrrr/myttyd package/lean
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/qt5 package/lean/qt5
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/qBittorrent package/lean/qBittorrent
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/rblibtorrent package/lean/rblibtorrent
@@ -67,11 +64,11 @@ svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-unblockm
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/UnblockNeteaseMusic package/lean/UnblockNeteaseMusic
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/UnblockNeteaseMusicGo package/lean/UnblockNeteaseMusicGo
 sed -i 's/解锁网易云灰色歌曲/解锁网易云/g' package/lean/luci-app-unblockmusic/po/zh-cn/unblockmusic.po
-git clone https://github.com/lllrrr/openwrt-Li package/lienol
-#svn co https://github.com/Lienol/openwrt-package/trunk/others package/lienol/others
-#svn co https://github.com/Lienol/openwrt-package/trunk/package package/lienol/package
+git clone https://github.com/lienol/openwrt-package package/lienol
+git clone https://github.com/lllrrr/mypsw package/mypsw
+git clone https://github.com/lllrrr/myttyd package/lean
 #svn co https://github.com/tsl0922/ttyd/trunk/openwrt/ttyd package/lean/ttyd
-#svn co https://github.com/tsl0922/ttyd/trunk/openwrt/luci-app-terminal package/lean/luci-app-terminal
+svn co https://github.com/lllrrr/myttyd/trunk/luci-app-terminal package/lean/luci-app-terminal
 #sed -i 's_../../_$(TOPDIR)/feeds/luci/_' package/lean/luci-app-terminal/Makefile
 #svn co https://github.com/rosywrt/luci-theme-rosy/trunk/luci-theme-rosy package/lean/luci-theme-rosy
 #svn co https://github.com/jerrykuku/luci-theme-argon/trunk package/lean/luci-theme-argon
@@ -135,7 +132,7 @@ git clone https://github.com/jerrykuku/lua-maxminddb package/lean/lua-maxminddb
 #svn co https://github.com/openwrt/packages/branches/openwrt-19.07/utils/zstd package/lean/zstd
 git clone https://github.com/lllrrr/frpmod package/lean/frpmod
 rm -rf feeds/packages/net/kcptun/
-rm -rf feeds/packages/utils/ttyd/
+#rm -rf feeds/packages/utils/ttyd/
 git clone https://github.com/pymumu/openwrt-smartdns package/lean/openwrt-smartdns
 git clone -b lede https://github.com/pymumu/luci-app-smartdns package/lean/luci-app-smartdns
 sed -i 's_../../_$(TOPDIR)/feeds/luci/_' package/lean/luci-app-smartdns/Makefile
