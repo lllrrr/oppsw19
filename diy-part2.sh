@@ -8,8 +8,6 @@
 # Modify default IP
 #sed -i 's/192.168.1.1/192.168.50.5/g' package/base-files/files/bin/config_generate
 
-#sed -i 's/default "5"/default "0"/g' config/Config-images.in
-#sed -i 's/default y if TARGET_pistachio/default y/g' config/Config-kernel.in
 sed -i 's/+IPV6:luci-proto-ipv6 //g' feeds/luci/collections/luci/Makefile
 sed -i 's/16384/65536/g' package/kernel/linux/files/sysctl-nf-conntrack.conf
 #sed -i 's/1024) + " <%:k/1048576) + " <%:M/g' feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_status/index.htm
@@ -66,8 +64,6 @@ svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/UnblockNeteaseMus
 sed -i 's/解锁网易云灰色歌曲/解锁网易云/g' package/lean/luci-app-unblockmusic/po/zh-cn/unblockmusic.po
 git clone https://github.com/lienol/openwrt-package package/lienol
 git clone https://github.com/lllrrr/mypsw package/mypsw
-git clone https://github.com/lllrrr/myttyd package/lean
-#svn co https://github.com/tsl0922/ttyd/trunk/openwrt/ttyd package/lean/ttyd
 svn co https://github.com/lllrrr/myttyd/trunk/luci-app-terminal package/lean/luci-app-terminal
 #sed -i 's_../../_$(TOPDIR)/feeds/luci/_' package/lean/luci-app-terminal/Makefile
 #svn co https://github.com/rosywrt/luci-theme-rosy/trunk/luci-theme-rosy package/lean/luci-theme-rosy
@@ -114,22 +110,27 @@ sed -i 's/DiskMan 磁盘管理/磁盘管理/g' package/lean/luci-app-diskman/po/
 git clone https://github.com/rufengsuixing/luci-app-syncdial package/lean/luci-app-syncdial
 #rm -rf feeds/packages/libs/libuv/
 #rm -rf package/libs/openssl/
-#svn co https://github.com/openwrt/packages/branches/openwrt-19.07/libs/libuv feeds/packages/libs/libuv/
-#svn co https://github.com/openwrt/openwrt/branches/openwrt-19.07/package/libs/openssl package/libs/openssl/
+#rm -rf feeds/packages/lang/golang/
+#rm -rf feeds/packages/utils/ttyd/
+#svn co https://github.com/openwrt/packages/trunk/libs/libuv feeds/packages/libs/libuv/
+#svn co https://github.com/openwrt/openwrt/trunk/package/libs/openssl package/libs/openssl/
+#svn co https://github.com/openwrt/packages/trunk/lang/golang feeds/packages/lang/golang
+#sed -i 's/+golang-src/+golang-src +libpthread/g' feeds/packages/lang/golang/golang/Makefile
+#svn co https://github.com/openwrt/packages/trunk/utils/ttyd feeds/packages/utils/ttyd
 svn co https://github.com/coolsnowwolf/lede/trunk/tools/ucl tools/ucl
 svn co https://github.com/coolsnowwolf/lede/trunk/tools/upx tools/upx
 cp ../Makefile tools/
-#rm -rf feeds/luci/applications/luci-app-aria2/
-#svn co https://github.com/kuoruan/openwrt-feeds/trunk/luci-app-aria2 feeds/luci/applications/luci-app-aria2
-#sed -i 's/services/nas/g' feeds/luci/applications/luci-app-aria2/luasrc/controller/aria2.lua
-#sed -i 's/services/nas/g' feeds/luci/applications/luci-app-aria2/luasrc/view/aria2/log_template.htm
-#sed -i 's/services/nas/g' feeds/luci/applications/luci-app-aria2/luasrc/view/aria2/settings_header.htm
+rm -rf feeds/luci/applications/luci-app-aria2/
+svn co https://github.com/kuoruan/openwrt-feeds/trunk/luci-app-aria2 feeds/luci/applications/luci-app-aria2
+sed -i 's/services/nas/g' feeds/luci/applications/luci-app-aria2/luasrc/controller/aria2.lua
+sed -i 's/services/nas/g' feeds/luci/applications/luci-app-aria2/luasrc/view/aria2/log_template.htm
+sed -i 's/services/nas/g' feeds/luci/applications/luci-app-aria2/luasrc/view/aria2/settings_header.htm
 #rm -rf feeds/packages/net/ariang/
 #svn co https://github.com/openwrt/packages/trunk/net/ariang feeds/packages/net/ariang
 git clone https://github.com/jerrykuku/luci-app-vssr package/lean/luci-app-vssr
 git clone https://github.com/jerrykuku/lua-maxminddb package/lean/lua-maxminddb
-#svn co https://github.com/openwrt/packages/branches/openwrt-19.07/libs/libmaxminddb package/lean/libmaxminddb
-#svn co https://github.com/openwrt/packages/branches/openwrt-19.07/utils/zstd package/lean/zstd
+#svn co https://github.com/openwrt/packages/trunk/libs/libmaxminddb package/lean/libmaxminddb
+#svn co https://github.com/openwrt/packages/trunk/utils/zstd package/lean/zstd
 git clone https://github.com/lllrrr/frpmod package/lean/frpmod
 rm -rf feeds/packages/net/kcptun/
 #rm -rf feeds/packages/utils/ttyd/
