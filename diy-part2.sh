@@ -27,7 +27,8 @@ svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-adbyby-p
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-autoreboot package/lean/luci-app-autoreboot
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-flowoffload package/lean/luci-app-flowoffload
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/frp package/lean/frp
-sed -i 's/0.31.2/0.32.0/g' package/lean/frp/Makefile
+sed -i 's/0.31.2/0.33.0/g' package/lean/frp/Makefile
+sed -i 's/3a6ef59163f5a1d41b67908269e924000a8ccb2984e4bdfc18bd1405b5dbaf22/9c773ab4bbd208705c795599c5e69302a379734921c90489ed8ae331c24836cb/g' package/lean/frp/Makefile
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-frpc package/lean/luci-app-frpc
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-frps package/lean/luci-app-frps
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-mwan3helper package/lean/luci-app-mwan3helper
@@ -140,7 +141,7 @@ rm -rf feeds/packages/net/kcptun/
 #rm -rf feeds/packages/utils/ttyd/
 git clone https://github.com/pymumu/openwrt-smartdns package/lean/openwrt-smartdns
 git clone -b lede https://github.com/pymumu/luci-app-smartdns package/lean/luci-app-smartdns
-sed -i 's_../../_$(TOPDIR)/feeds/luci/_' package/lean/luci-app-smartdns/Makefile
+#sed -i 's_../../_$(TOPDIR)/feeds/luci/_' package/lean/luci-app-smartdns/Makefile
 cp ../target.mk include/
 #cp ../luci.mk feeds/luci/
 cp ../zzz-default-settings package/lean/default-settings/files/
