@@ -123,6 +123,7 @@ jobs:
         mkdir mknop/armbian/phicomm-n1/root/etc/modules.d/
         mv phicomm-n1-wireless/* mknop/armbian/phicomm-n1/root/etc/modules.d/
         rm -rf mknop/openwrt/*
+        find openwrt/bin/targets/ -name "config.*" | xargs -i mv -f {} mknop/
         find openwrt/bin/targets/ -name "*rootfs*tar*gz*" | xargs -i mv -f {} mknop/openwrt/
         cd mknop
         sudo ./make -d
@@ -156,3 +157,9 @@ jobs:
       with:
         name: ${{ env.firmware_3 }}
         path: mknop/out/5.4.20
+
+    - name: Upload config file
+      uses: actions/upload-artifact@master
+      with:
+        name: config
+        path: mknop/config.*

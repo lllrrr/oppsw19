@@ -27,7 +27,7 @@ svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-adbyby-p
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-autoreboot package/lean/luci-app-autoreboot
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-flowoffload package/lean/luci-app-flowoffload
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/frp package/lean/frp
-sed -i 's/0.31.2/0.33.0/g' package/lean/frp/Makefile
+sed -i 's/0.32.1/0.33.0/g' package/lean/frp/Makefile
 sed -i 's/3a6ef59163f5a1d41b67908269e924000a8ccb2984e4bdfc18bd1405b5dbaf22/9c773ab4bbd208705c795599c5e69302a379734921c90489ed8ae331c24836cb/g' package/lean/frp/Makefile
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-frpc package/lean/luci-app-frpc
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-frps package/lean/luci-app-frps
@@ -109,6 +109,9 @@ mkdir package/lean/parted
 mv package/lean/luci-app-diskman/Parted.Makefile package/lean/parted/Makefile
 sed -i 's/DiskMan 磁盘管理/磁盘管理/g' package/lean/luci-app-diskman/po/zh-cn/diskman.po
 git clone https://github.com/rufengsuixing/luci-app-syncdial package/lean/luci-app-syncdial
+git clone https://github.com/rufengsuixing/luci-app-autoipsetadder package/lean/luci-app-autoipsetadder
+git clone https://github.com/rufengsuixing/luci-app-usb3disable package/lean/luci-app-usb3disable
+git clone https://github.com/Mleaf/openwrt-mwol package/lean/openwrt-mwol
 #rm -rf feeds/packages/libs/libuv/
 #rm -rf package/libs/openssl/
 #rm -rf feeds/packages/lang/golang/
