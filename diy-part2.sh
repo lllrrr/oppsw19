@@ -67,14 +67,14 @@ git clone https://github.com/lienol/openwrt-package package/lienol
 git clone https://github.com/lllrrr/mypsw package/mypsw
 svn co https://github.com/lllrrr/myttyd/trunk/luci-app-terminal package/lean/luci-app-terminal
 #sed -i 's_../../_$(TOPDIR)/feeds/luci/_' package/lean/luci-app-terminal/Makefile
-#svn co https://github.com/rosywrt/luci-theme-rosy/trunk/luci-theme-rosy package/lean/luci-theme-rosy
-#svn co https://github.com/jerrykuku/luci-theme-argon/trunk package/lean/luci-theme-argon
+svn co https://github.com/rosywrt/luci-theme-rosy/trunk/luci-theme-rosy package/lean/luci-theme-rosy
+git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon package/lean/luci-theme-argon
 #svn co https://github.com/john-shine/luci-theme-darkmatter/trunk/luci/themes/luci-theme-darkmatter package/lean/luci-theme-darkmatter
 #sed -i 's_../../_$(TOPDIR)/feeds/luci/_' package/lean/luci-theme-darkmatter/Makefile
 #svn co https://github.com/kuyokushin/luci-theme-darkpro/trunk/luci/themes/luci-theme-darkpro package/lean/luci-theme-darkpro
 #sed -i 's_../../_$(TOPDIR)/feeds/luci/_' package/lean/luci-theme-darkpro/Makefile
-#svn co https://github.com/solidus1983/luci-theme-opentomato/trunk/luci/themes/luci-theme-opentomato package/lean/luci-theme-opentomato
-#sed -i 's_../../_$(TOPDIR)/feeds/luci/_' package/lean/luci-theme-opentomato/Makefile
+svn co https://github.com/solidus1983/luci-theme-opentomato/trunk/luci/themes/luci-theme-opentomato package/lean/luci-theme-opentomato
+sed -i 's_../../_$(TOPDIR)/feeds/luci/_' package/lean/luci-theme-opentomato/Makefile
 #svn co https://github.com/kuoruan/openwrt-v2ray/trunk package/lean/openwrt-v2ray
 #svn co https://github.com/kuoruan/luci-app-v2ray/trunk package/lean/luci-app-v2ray
 #svn co https://github.com/kuoruan/openwrt-frp/trunk package/lean/openwrt-frp
@@ -120,6 +120,7 @@ git clone https://github.com/Mleaf/openwrt-mwol package/lean/openwrt-mwol
 #svn co https://github.com/openwrt/openwrt/trunk/package/libs/openssl package/libs/openssl/
 #svn co https://github.com/openwrt/packages/trunk/lang/golang feeds/packages/lang/golang
 #sed -i 's/+golang-src/+golang-src +libpthread/g' feeds/packages/lang/golang/golang/Makefile
+#rm -rf feeds/packages/utils/ttyd/
 #svn co https://github.com/openwrt/packages/trunk/utils/ttyd feeds/packages/utils/ttyd
 svn co https://github.com/coolsnowwolf/lede/trunk/tools/ucl tools/ucl
 svn co https://github.com/coolsnowwolf/lede/trunk/tools/upx tools/upx
