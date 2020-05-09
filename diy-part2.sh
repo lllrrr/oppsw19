@@ -120,8 +120,8 @@ git clone https://github.com/Mleaf/openwrt-mwol package/lean/openwrt-mwol
 #svn co https://github.com/openwrt/openwrt/trunk/package/libs/openssl package/libs/openssl/
 #svn co https://github.com/openwrt/packages/trunk/lang/golang feeds/packages/lang/golang
 #sed -i 's/+golang-src/+golang-src +libpthread/g' feeds/packages/lang/golang/golang/Makefile
-#rm -rf feeds/packages/utils/ttyd/
-#svn co https://github.com/openwrt/packages/trunk/utils/ttyd feeds/packages/utils/ttyd
+rm -rf feeds/packages/utils/ttyd/
+svn co https://github.com/openwrt/packages/trunk/utils/ttyd feeds/packages/utils/ttyd
 svn co https://github.com/coolsnowwolf/lede/trunk/tools/ucl tools/ucl
 svn co https://github.com/coolsnowwolf/lede/trunk/tools/upx tools/upx
 cp ../Makefile tools/
