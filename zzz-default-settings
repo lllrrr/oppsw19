@@ -16,20 +16,6 @@ uci commit fstab
 uci set network.lan.ipaddr=192.168.123.1
 uci commit network
 
-uci set wireless.@wifi-device[0].disabled=0
-uci set wireless.@wifi-device[0].channel=auto
-uci set wireless.@wifi-device[0].country=CN
-uci set wireless.@wifi-iface[0].ssid=OPR
-uci set wireless.@wifi-iface[0].encryption=psk-mixed
-uci set wireless.@wifi-iface[0].key=password
-uci set wireless.@wifi-device[1].disabled=0
-uci set wireless.@wifi-device[1].channel=auto
-uci set wireless.@wifi-device[1].country=CN
-uci set wireless.@wifi-iface[1].ssid=OPR_5G
-uci set wireless.@wifi-iface[1].encryption=psk-mixed
-uci set wireless.@wifi-iface[1].key=password
-uci commit wireless
-
 echo "00 5 * * 1 sleep 5 && touch /etc/banner && reboot" >> /etc/crontabs/root
 
 sed -i 's/root::0:0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/g' /etc/shadow
