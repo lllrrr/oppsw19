@@ -6,7 +6,7 @@
 # Blog: https://p3terx.com
 #=================================================
 
-name: Newifi3 OpenWrt 19.07.3
+name: Newifi3 OpenWrt 19.07.3-36
 
 on:
   repository_dispatch:
@@ -28,7 +28,7 @@ env:
   REPO_BRANCH: v19.07.3
   CONFIG_FILE: 7621.config
   DIY_P1_SH: diy-part1.sh
-  DIY_P2_SH: diy-part2.sh
+  DIY_P2_SH: 36.sh
   SSH_ACTIONS: false
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true

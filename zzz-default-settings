@@ -24,7 +24,6 @@ sed -i '/DISTRIB_REVISION/d' /etc/openwrt_release
 echo "DISTRIB_REVISION='R8.3.19.0410'" >> /etc/openwrt_release
 sed -i '/DISTRIB_DESCRIPTION/d' /etc/openwrt_release
 echo "DISTRIB_DESCRIPTION='Router'" >> /etc/openwrt_release
-#echo -e "\nddns.net" >> /etc/config/passwall_rule/whitelist_host
 
 sed -i '/Powered by/d' /usr/lib/lua/luci/view/themes/bootstrap/footer.htm
 sed -i '/Powered by/d' /usr/lib/lua/luci/view/themes/argon_dark/footer.htm
