@@ -25,7 +25,7 @@ on:
 
 env:
   REPO_URL: https://github.com/openwrt/openwrt
-  REPO_BRANCH: v19.07.3
+  REPO_BRANCH: openwrt-19.07
   CONFIG_FILE: 7621.config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh

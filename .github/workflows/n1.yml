@@ -25,7 +25,7 @@ on:
 
 env:
   REPO_URL: https://github.com/openwrt/openwrt
-  REPO_BRANCH: v19.07.3
+  REPO_BRANCH: openwrt-19.07
   CONFIG_FILE: n1.config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
@@ -61,9 +61,6 @@ jobs:
 
     - name: Clone mknop code
       run: git clone --depth 1 https://github.com/tuanqing/mknop -b master mknop
-     
-    - name: Clone N1wireless code
-      run: git clone --depth 1 https://github.com/maxlicheng/phicomm-n1-wireless -b master phicomm-n1-wireless
 
     - name: Load custom feeds
       run: |
