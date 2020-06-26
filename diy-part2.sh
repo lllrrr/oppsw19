@@ -144,8 +144,9 @@ git clone https://github.com/jerrykuku/lua-maxminddb package/lean/lua-maxminddb
 git clone https://github.com/lllrrr/frpmod package/lean/frpmod
 rm -rf feeds/packages/net/kcptun/
 #rm -rf feeds/packages/utils/ttyd/
-git clone https://github.com/pymumu/openwrt-smartdns package/lean/openwrt-smartdns
-git clone -b lede https://github.com/pymumu/luci-app-smartdns package/lean/luci-app-smartdns
+git clone https://github.com/lllrrr/mysmartdns package/mysmartdns
+#git clone https://github.com/pymumu/openwrt-smartdns package/lean/openwrt-smartdns
+#git clone -b lede https://github.com/pymumu/luci-app-smartdns package/lean/luci-app-smartdns
 #sed -i 's_../../_$(TOPDIR)/feeds/luci/_' package/lean/luci-app-smartdns/Makefile
 cp ../target.mk include/
 #cp ../luci.mk feeds/luci/
