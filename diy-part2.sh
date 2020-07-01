@@ -139,6 +139,8 @@ rm -rf feeds/packages/net/ariang/
 svn co https://github.com/openwrt/packages/trunk/net/ariang feeds/packages/net/ariang
 git clone https://github.com/jerrykuku/luci-app-vssr package/lean/luci-app-vssr
 git clone https://github.com/jerrykuku/lua-maxminddb package/lean/lua-maxminddb
+git clone https://github.com/jerrykuku/luci-app-jd-dailybonus package/lean/luci-app-jd-dailybonus
+git clone https://github.com/jerrykuku/node-request package/lean/node-request
 #svn co https://github.com/openwrt/packages/trunk/libs/libmaxminddb package/lean/libmaxminddb
 #svn co https://github.com/openwrt/packages/trunk/utils/zstd package/lean/zstd
 git clone https://github.com/lllrrr/frpmod package/lean/frpmod
