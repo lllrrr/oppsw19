@@ -10,6 +10,9 @@ uci set system.@system[0].zonename=Asia/Shanghai
 uci set system.@watchcat[0].pingperiod=30m
 uci commit system
 
+uci set fstab.@global[0].anon_mount=1
+uci commit fstab
+
 uci set network.lan.ipaddr=192.168.123.1
 uci commit network
 
@@ -29,7 +32,7 @@ sed -i '/Powered by/d' /usr/lib/lua/luci/view/themes/argon_light/footer.htm
 sed -i '/Powered by/d' /usr/lib/lua/luci/view/themes/argon_light_green/footer.htm
 sed -i '/Powered by/d' /usr/lib/lua/luci/view/themes/rosy/footer.htm
 sed -i '/Powered by/d' /usr/lib/lua/luci/view/themes/bootstrap_blue/footer.htm
-sed -i '/Powered by/d' /usr/lib/lua/luci/view/themes/bootstrap_purple/footer.htm
+sed -i '/Powered by/d' /usr/lib/lua/luci/view/themes/bootstrap_mod/footer.htm
 sed -i '/Powered by/d' /usr/lib/lua/luci/view/themes/netgear_mc/footer.htm
 sed -i '/Powered by/d' /usr/lib/lua/luci/view/themes/argon/footer.htm
 sed -i '/Powered by/d' /usr/lib/lua/luci/view/themes/opentomato/footer.htm
