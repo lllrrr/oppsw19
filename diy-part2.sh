@@ -117,11 +117,11 @@ git clone https://github.com/rufengsuixing/luci-app-usb3disable package/lean/luc
 git clone https://github.com/Mleaf/openwrt-mwol package/lean/openwrt-mwol
 #rm -rf feeds/packages/libs/libuv/
 #rm -rf package/libs/openssl/
-#rm -rf feeds/packages/lang/golang/
+rm -rf feeds/packages/lang/golang/
 #rm -rf feeds/packages/utils/ttyd/
 #svn co https://github.com/openwrt/packages/trunk/libs/libuv feeds/packages/libs/libuv/
 #svn co https://github.com/openwrt/openwrt/trunk/package/libs/openssl package/libs/openssl/
-#svn co https://github.com/openwrt/packages/trunk/lang/golang feeds/packages/lang/golang
+svn co https://github.com/openwrt/packages/trunk/lang/golang feeds/packages/lang/golang
 #sed -i 's/+golang-src/+golang-src +libpthread/g' feeds/packages/lang/golang/golang/Makefile
 rm -rf feeds/packages/utils/ttyd/
 svn co https://github.com/openwrt/packages/trunk/utils/ttyd feeds/packages/utils/ttyd
