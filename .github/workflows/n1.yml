@@ -121,7 +121,7 @@ jobs:
         sudo ./make -d
         cd out
         i=0
-        kernels=("4.18.7" "5.4.50")
+        kernels=("4.18.7" "4.19.106" "5.4.50")
         for x in ${kernels[*]}; do
           cd $x
           filename=$(ls)
