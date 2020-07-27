@@ -121,7 +121,7 @@ jobs:
         sudo ./make -d
         cd out
         i=0
-        kernels=("4.18.7" "4.19.106" "5.4.50")
+        kernels=("4.19.134" "5.4.50")
         for x in ${kernels[*]}; do
           cd $x
           filename=$(ls)
@@ -132,22 +132,16 @@ jobs:
           echo "::set-env name=firmware_$((++i))::$filename"
         done
 
-    - name: Upload firmware @ kernel 4.18.7
+    - name: Upload firmware @ kernel 4.19.134
       uses: actions/upload-artifact@master
       with:
         name: ${{ env.firmware_1 }}
-        path: mknop/out/4.18.7
-
-    - name: Upload firmware @ kernel 4.19.106
-      uses: actions/upload-artifact@master
-      with:
-        name: ${{ env.firmware_2 }}
-        path: mknop/out/4.19.106
+        path: mknop/out/4.19.134
 
     - name: Upload firmware @ kernel 5.4.50
       uses: actions/upload-artifact@master
       with:
-        name: ${{ env.firmware_3 }}
+        name: ${{ env.firmware_2 }}
         path: mknop/out/5.4.50
 
     - name: Upload config file
