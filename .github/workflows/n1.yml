@@ -60,7 +60,7 @@ jobs:
       run: git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
 
     - name: Clone mknop code
-      run: git clone --depth 1 https://github.com/tuanqing/mknop -b master mknop
+      run: git clone --depth 1 https://github.com/lllrrr/mymknop -b master mknop
 
     - name: Load custom feeds
       run: |
@@ -121,7 +121,7 @@ jobs:
         sudo ./make -d
         cd out
         i=0
-        kernels=("4.19.134" "5.4.50")
+        kernels=("4.18.7" "5.4.54")
         for x in ${kernels[*]}; do
           cd $x
           filename=$(ls)
@@ -132,17 +132,17 @@ jobs:
           echo "::set-env name=firmware_$((++i))::$filename"
         done
 
-    - name: Upload firmware @ kernel 4.19.134
+    - name: Upload firmware @ kernel 4.18.7
       uses: actions/upload-artifact@master
       with:
         name: ${{ env.firmware_1 }}
-        path: mknop/out/4.19.134
+        path: mknop/out/4.18.7
 
-    - name: Upload firmware @ kernel 5.4.50
+    - name: Upload firmware @ kernel 5.4.54
       uses: actions/upload-artifact@master
       with:
         name: ${{ env.firmware_2 }}
-        path: mknop/out/5.4.50
+        path: mknop/out/5.4.54
 
     - name: Upload config file
       uses: actions/upload-artifact@master
