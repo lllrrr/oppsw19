@@ -35,9 +35,6 @@ sed -i '/Powered by/d' /usr/lib/lua/luci/view/themes/bootstrap_blue/footer.htm
 sed -i '/Powered by/d' /usr/lib/lua/luci/view/themes/bootstrap_mod/footer.htm
 sed -i '/Powered by/d' /usr/lib/lua/luci/view/themes/netgear_mc/footer.htm
 sed -i '/Powered by/d' /usr/lib/lua/luci/view/themes/argon/footer.htm
-sed -i '/Powered by/d' /usr/lib/lua/luci/view/themes/opentomato/footer.htm
-sed -i '/Powered by/d' /usr/lib/lua/luci/view/themes/leo/footer.htm
-sed -i '/Powered by/d' /usr/lib/lua/luci/view/themes/leo1/footer.htm
 
 sed -i '/<%=pcdata(ver.distname)%> <%=pcdata(ver.distversion)%>/d' /usr/lib/lua/luci/view/admin_status/index.htm
 sed -i 's/<%=pcdata(ver.luciname)%> (<%=pcdata(ver.luciversion)%>)/<%=pcdata(ver.distname)%> <%=pcdata(ver.distversion)%>/g' /usr/lib/lua/luci/view/admin_status/index.htm
