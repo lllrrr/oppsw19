@@ -30,6 +30,22 @@ config smartdns
 config server
 	option enabled '1'
 	option type 'udp'
+	option name '深圳电信'
+	option ip '202.96.134.133'
+	option server_group 'china'
+	option blacklist_ip '0'
+
+config server
+	option enabled '1'
+	option type 'udp'
+	option name '深圳移动'
+	option ip '120.196.165.24'
+	option server_group 'china'
+	option blacklist_ip '0'
+
+config server
+	option enabled '1'
+	option type 'udp'
 	option name '阿里'
 	option ip '223.5.5.5'
 	option server_group 'china'
@@ -61,7 +77,15 @@ config server
 
 config server
 	option enabled '1'
-	option type 'tls'
+	option type 'tcp'
+	option name 'Google'
+	option ip '8.8.4.4'
+	option server_group 'overseas'
+	option blacklist_ip '0'
+
+config server
+	option enabled '1'
+	option type 'udp'
 	option name 'Google'
 	option ip '8.8.4.4'
 	option server_group 'overseas'
@@ -70,8 +94,48 @@ config server
 config server
 	option enabled '1'
 	option type 'tls'
-	option name 'Google'
-	option ip '8.8.8.8'
+	option name 'Google(DoT)'
+	option ip 'dns.google'
+	option server_group 'overseas'
+	option blacklist_ip '0'
+
+config server
+	option enabled '1'
+	option type 'https'
+	option name 'Google(DoH)'
+	option ip 'https://dns.google/dns-query'
+	option server_group 'overseas'
+	option blacklist_ip '0'
+
+config server
+	option enabled '1'
+	option type 'tcp'
+	option name 'Cloudflare'
+	option ip '1.1.1.1'
+	option server_group 'overseas'
+	option blacklist_ip '0'
+
+config server
+	option enabled '1'
+	option type 'udp'
+	option name 'Cloudflare'
+	option ip '1.1.1.1'
+	option server_group 'overseas'
+	option blacklist_ip '0'
+
+config server
+	option enabled '1'
+	option type 'tls'
+	option name 'Cloudflare(DoT)'
+	option ip '1.1.1.1'
+	option server_group 'overseas'
+	option blacklist_ip '0'
+
+config server
+	option enabled '1'
+	option type 'https'
+	option name 'Cloudflare(DoH)'
+	option ip '1.1.1.1'
 	option server_group 'overseas'
 	option blacklist_ip '0'
 

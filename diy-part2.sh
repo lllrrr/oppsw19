@@ -64,7 +64,7 @@ svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-unblockm
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/UnblockNeteaseMusic package/lean/UnblockNeteaseMusic
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/UnblockNeteaseMusicGo package/lean/UnblockNeteaseMusicGo
 sed -i 's/解锁网易云灰色歌曲/解锁网易云/g' package/lean/luci-app-unblockmusic/po/zh-cn/unblockmusic.po
-git clone https://github.com/lienol/openwrt-package package/lienol
+git clone https://github.com/xiaorouji/openwrt-package package/lienol
 #git clone https://github.com/lllrrr/mypswold package/mypswold
 #svn co https://github.com/lllrrr/openwrt-Li/trunk/lienol/luci-app-passwall package/lienol/luci-app-passwall
 svn co https://github.com/lllrrr/myttyd/trunk/luci-app-terminal package/lean/luci-app-terminal
