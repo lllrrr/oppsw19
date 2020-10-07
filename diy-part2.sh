@@ -156,6 +156,7 @@ git clone https://github.com/lllrrr/mysmartdns package/mysmartdns
 #git clone -b lede https://github.com/pymumu/luci-app-smartdns package/lean/luci-app-smartdns
 #sed -i 's_../../_$(TOPDIR)/feeds/luci/_' package/lean/luci-app-smartdns/Makefile
 cp ../target.mk include/
+cp -r ../feeds/packages/ feeds/
 #cp ../luci.mk feeds/luci/
 cp ../zzz-default-settings package/lean/default-settings/files/
 sed -i "s/8.3.19.0410/9.$(date "+%y.%m%d.%H")/g" package/lean/default-settings/files/zzz-default-settings
