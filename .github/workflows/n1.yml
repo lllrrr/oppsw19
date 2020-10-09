@@ -60,7 +60,7 @@ jobs:
       run: git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
 
     - name: Clone mknop code
-      run: git clone --depth 1 https://github.com/lllrrr/mymknop -b master mknop
+      run: git clone --depth 1 https://github.com/tuanqing/mknop -b master mknop
 
     - name: Load custom feeds
       run: |
@@ -118,31 +118,16 @@ jobs:
         find openwrt/bin/targets/ -name "config.*" | xargs -i mv -f {} mknop/
         find openwrt/bin/targets/ -name "*rootfs*tar*gz*" | xargs -i mv -f {} mknop/openwrt/
         cd mknop
-        sudo ./make -d
-        cd out
-        i=0
-        kernels=("4.18.7" "5.4.54")
-        for x in ${kernels[*]}; do
-          cd $x
-          filename=$(ls)
-          filename=${filename%.*}
-          tar -czvf "$filename.tar.gz" *.img
-          rm -f *.img
-          cd ../
-          echo "::set-env name=firmware_$((++i))::$filename"
-        done
+        sudo ./gen_openwrt -d -m phicomm-n1
+        cd out/phicomm-n1
+        tar -czvf phicomm-n1.tar.gz *.img
+        rm -f *.img
 
-    - name: Upload firmware @ kernel 4.18.7
+    - name: Upload firmware
       uses: actions/upload-artifact@master
       with:
-        name: ${{ env.firmware_1 }}
-        path: mknop/out/4.18.7
-
-    - name: Upload firmware @ kernel 5.4.54
-      uses: actions/upload-artifact@master
-      with:
-        name: ${{ env.firmware_2 }}
-        path: mknop/out/5.4.54
+        name: ${{ env.firmware_name }}
+        path: mknop/out/phicomm-n1
 
     - name: Upload config file
       uses: actions/upload-artifact@master
