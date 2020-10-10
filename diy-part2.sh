@@ -105,12 +105,12 @@ git clone https://github.com/rufengsuixing/luci-app-adguardhome package/lean/luc
 git clone https://github.com/peter-tank/luci-app-fullconenat package/lean/luci-app-fullconenat
 sed -i 's/NAT类型-Full cone NAT/NAT类型/g' package/lean/luci-app-fullconenat/po/zh-cn/fullconenat.po
 git clone https://github.com/llccd/openwrt-fullconenat package/lean/openwrt-fullconenat
-rm -rf package/network/config/firewall/
-svn co https://github.com/Lienol/openwrt/trunk/package/network/config/firewall package/network/config/firewall
-svn co https://github.com/Lienol/openwrt/trunk/package/network/fullconenat package/network/fullconenat
-rm -rf target/linux/generic/hack-4.14/
-svn co https://github.com/Lienol/openwrt/trunk/target/linux/generic/hack-4.14 target/linux/generic/hack-4.14
-rm -rf target/linux/generic/hack-4.14/999-01-shortcut-fe-support.patch
+#rm -rf package/network/config/firewall/
+#svn co https://github.com/Lienol/openwrt/trunk/package/network/config/firewall package/network/config/firewall
+#svn co https://github.com/Lienol/openwrt/trunk/package/network/fullconenat package/network/fullconenat
+#rm -rf target/linux/generic/hack-4.14/
+#svn co https://github.com/Lienol/openwrt/trunk/target/linux/generic/hack-4.14 target/linux/generic/hack-4.14
+#rm -rf target/linux/generic/hack-4.14/999-01-shortcut-fe-support.patch
 svn co https://github.com/Lienol/openwrt/trunk/lang/golang feeds/packages/lang/golang
 #svn co https://github.com/Leo-Jo-My/luci-app-ssr-plus-jo/trunk package/lean/luci-app-ssr-plus-jo
 #svn co https://github.com/Leo-Jo-My/luci-app-vssr-coexist/trunk package/lean/luci-app-vssr-coexist

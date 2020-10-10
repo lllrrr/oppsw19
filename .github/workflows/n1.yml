@@ -120,7 +120,7 @@ jobs:
         cd mknop
         sudo ./gen_openwrt -d -m phicomm-n1
         cd out/phicomm-n1
-        tar -czvf phicomm-n1.tar.gz *.img
+        tar -czvf *.tar.gz *.img
         rm -f *.img
 
     - name: Upload firmware
