@@ -102,9 +102,13 @@ git clone https://github.com/vison9889/luci-app-eqos package/lean/luci-app-eqos
 git clone https://github.com/tty228/luci-app-serverchan package/lean/luci-app-serverchan
 #git clone https://github.com/happyzhang1995/openwrt-adguardhome package/lean/openwrt-adguardhome
 git clone https://github.com/rufengsuixing/luci-app-adguardhome package/lean/luci-app-adguardhome
-git clone https://github.com/stamilo/luci-app-fullconenat package/lean/luci-app-fullconenat
+git clone https://github.com/peter-tank/luci-app-fullconenat package/lean/luci-app-fullconenat
 sed -i 's/NAT类型-Full cone NAT/NAT类型/g' package/lean/luci-app-fullconenat/po/zh-cn/fullconenat.po
-git clone https://github.com/LGA1150/openwrt-fullconenat package/lean/openwrt-fullconenat
+git clone https://github.com/llccd/openwrt-fullconenat package/lean/openwrt-fullconenat
+rm -rf package/network/config/firewall/
+svn co https://github.com/Lienol/openwrt/trunk/package/network/config/firewall package/network/config/firewall
+svn co https://github.com/Lienol/openwrt/trunk/package/network/fullconenat package/network/fullconenat
+svn co https://github.com/Lienol/openwrt/trunk/lang/golang feeds/packages/lang/golang
 #svn co https://github.com/Leo-Jo-My/luci-app-ssr-plus-jo/trunk package/lean/luci-app-ssr-plus-jo
 #svn co https://github.com/Leo-Jo-My/luci-app-vssr-coexist/trunk package/lean/luci-app-vssr-coexist
 #svn co https://github.com/Leo-Jo-My/luci-app-vssr/trunk package/lean/luci-app-vssr
