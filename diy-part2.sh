@@ -108,6 +108,9 @@ git clone https://github.com/llccd/openwrt-fullconenat package/lean/openwrt-full
 rm -rf package/network/config/firewall/
 svn co https://github.com/Lienol/openwrt/trunk/package/network/config/firewall package/network/config/firewall
 svn co https://github.com/Lienol/openwrt/trunk/package/network/fullconenat package/network/fullconenat
+rm -rf target/linux/generic/hack-4.14/
+svn co https://github.com/Lienol/openwrt/trunk/target/linux/generic/hack-4.14 target/linux/generic/hack-4.14
+rm -rf target/linux/generic/hack-4.14/999-01-shortcut-fe-support.patch
 svn co https://github.com/Lienol/openwrt/trunk/lang/golang feeds/packages/lang/golang
 #svn co https://github.com/Leo-Jo-My/luci-app-ssr-plus-jo/trunk package/lean/luci-app-ssr-plus-jo
 #svn co https://github.com/Leo-Jo-My/luci-app-vssr-coexist/trunk package/lean/luci-app-vssr-coexist
