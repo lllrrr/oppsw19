@@ -139,7 +139,7 @@ rm -rf feeds/packages/utils/ttyd/
 svn co https://github.com/openwrt/packages/trunk/utils/ttyd feeds/packages/utils/ttyd
 svn co https://github.com/coolsnowwolf/lede/trunk/tools/ucl tools/ucl
 svn co https://github.com/coolsnowwolf/lede/trunk/tools/upx tools/upx
-cp ../Makefile tools/
+cp $GITHUB_WORKSPACE/Makefile tools/
 rm -rf feeds/packages/net/aria2/
 svn co https://github.com/openwrt/packages/trunk/net/aria2 feeds/packages/net/aria2
 #sed -i 's/1.33.0/1.33.1/g' feeds/packages/net/aria2/Makefile
@@ -164,9 +164,9 @@ git clone https://github.com/lllrrr/mysmartdns package/mysmartdns
 #git clone https://github.com/pymumu/openwrt-smartdns package/lean/openwrt-smartdns
 #git clone -b lede https://github.com/pymumu/luci-app-smartdns package/lean/luci-app-smartdns
 #sed -i 's_../../_$(TOPDIR)/feeds/luci/_' package/lean/luci-app-smartdns/Makefile
-cp ../target.mk include/
-cp -r ../feeds/packages/ feeds/
+cp $GITHUB_WORKSPACE/target.mk include/
+cp -r $GITHUB_WORKSPACE/feeds/packages/ feeds/
 #cp ../luci.mk feeds/luci/
-cp ../zzz-default-settings package/lean/default-settings/files/
+cp $GITHUB_WORKSPACE/zzz-default-settings package/lean/default-settings/files/
 sed -i "s/8.3.19.0410/9.$(date "+%y.%m%d.%H")/g" package/lean/default-settings/files/zzz-default-settings
 sed -i "s/8.3.19.0410/9.$(date "+%y.%m%d.%H")/g" files/etc/banner
