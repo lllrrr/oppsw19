@@ -19,9 +19,9 @@ on:
     paths:
       - 'x86.config'
   schedule:
-    - cron: 0 2 * * *
-  watch:
-    types: started
+    - cron: 0 2 1 * *
+#  watch:
+#    types: started
 
 env:
   REPO_URL: https://github.com/openwrt/openwrt
