@@ -7,9 +7,11 @@
 #=================================================
 # Modify default IP
 #sed -i 's/192.168.1.1/192.168.50.5/g' package/base-files/files/bin/config_generate
+# Modify hostname
+#sed -i 's/OpenWrt/Newifi-D2/g' package/base-files/files/bin/config_generate
 
 sed -i 's/+IPV6:luci-proto-ipv6 //g' feeds/luci/collections/luci/Makefile
-sed -i 's/16384/65536/g' package/kernel/linux/files/sysctl-nf-conntrack.conf
+sed -i 's/16384/65535/g' package/kernel/linux/files/sysctl-nf-conntrack.conf
 #sed -i 's/1024) + " <%:k/1048576) + " <%:M/g' feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_status/index.htm
 #sed -i 's/(info.memory/Math.floor(info.memory/g' feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_status/index.htm
 #sed -i 's/(Math.floor/Math.floor(/g' feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_status/index.htm
@@ -140,7 +142,7 @@ rm -rf feeds/packages/utils/ttyd/
 svn co https://github.com/openwrt/packages/trunk/utils/ttyd feeds/packages/utils/ttyd
 svn co https://github.com/coolsnowwolf/lede/trunk/tools/ucl tools/ucl
 svn co https://github.com/coolsnowwolf/lede/trunk/tools/upx tools/upx
-cp $GITHUB_WORKSPACE/Makefile tools/
+cp ../Makefile tools/
 rm -rf feeds/packages/net/aria2/
 svn co https://github.com/openwrt/packages/trunk/net/aria2 feeds/packages/net/aria2
 #sed -i 's/1.33.0/1.33.1/g' feeds/packages/net/aria2/Makefile
@@ -165,9 +167,9 @@ git clone https://github.com/lllrrr/mysmartdns package/mysmartdns
 #git clone https://github.com/pymumu/openwrt-smartdns package/lean/openwrt-smartdns
 #git clone -b lede https://github.com/pymumu/luci-app-smartdns package/lean/luci-app-smartdns
 #sed -i 's_../../_$(TOPDIR)/feeds/luci/_' package/lean/luci-app-smartdns/Makefile
-cp $GITHUB_WORKSPACE/target.mk include/
-cp -r $GITHUB_WORKSPACE/feeds/packages/ feeds/
+cp ../target.mk include/
+cp -r ../feeds/packages/ feeds/
 #cp ../luci.mk feeds/luci/
-cp $GITHUB_WORKSPACE/zzz-default-settings package/lean/default-settings/files/
+cp ../zzz-default-settings package/lean/default-settings/files/
 sed -i "s/8.3.19.0410/9.$(date "+%y.%m%d.%H")/g" package/lean/default-settings/files/zzz-default-settings
 sed -i "s/8.3.19.0410/9.$(date "+%y.%m%d.%H")/g" files/etc/banner
