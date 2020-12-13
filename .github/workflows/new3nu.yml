@@ -18,8 +18,8 @@ on:
       - master
     paths:
       - '7621.config'
-  schedule:
-    - cron: 0 2 1 * *
+#  schedule:
+#    - cron: 0 2 1 * *
 #  watch:
 #    types: started
 
