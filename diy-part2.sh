@@ -114,7 +114,6 @@ git clone https://github.com/llccd/openwrt-fullconenat package/lean/openwrt-full
 #rm -rf target/linux/generic/hack-4.14/
 #svn co https://github.com/Lienol/openwrt/trunk/target/linux/generic/hack-4.14 target/linux/generic/hack-4.14
 #rm -rf target/linux/generic/hack-4.14/999-01-shortcut-fe-support.patch
-svn co https://github.com/Lienol/openwrt/trunk/lang/golang feeds/packages/lang/golang
 #svn co https://github.com/Leo-Jo-My/luci-app-ssr-plus-jo/trunk package/lean/luci-app-ssr-plus-jo
 #svn co https://github.com/Leo-Jo-My/luci-app-vssr-coexist/trunk package/lean/luci-app-vssr-coexist
 #svn co https://github.com/Leo-Jo-My/luci-app-vssr/trunk package/lean/luci-app-vssr
@@ -130,14 +129,13 @@ git clone https://github.com/Mleaf/openwrt-mwol package/lean/openwrt-mwol
 #rm -rf feeds/packages/libs/libuv/
 #rm -rf package/libs/openssl/
 rm -rf feeds/packages/lang/golang/
-#rm -rf feeds/packages/utils/ttyd/
 #svn co https://github.com/openwrt/packages/trunk/libs/libuv feeds/packages/libs/libuv/
 #svn co https://github.com/openwrt/openwrt/trunk/package/libs/openssl package/libs/openssl/
 #svn co https://github.com/openwrt/packages/trunk/lang/golang feeds/packages/lang/golang
+#sed -i 's/+golang-src/+golang-src +libpthread/g' feeds/packages/lang/golang/golang/Makefile
+svn co https://github.com/Lienol/openwrt-packages/trunk/lang/golang feeds/packages/lang/golang
 rm -rf feeds/packages/libs/libcap/
 svn co https://github.com/openwrt/packages/trunk/libs/libcap feeds/packages/libs/libcap
-svn co https://github.com/Lienol/openwrt-packages/trunk/lang/golang feeds/packages/lang/golang
-#sed -i 's/+golang-src/+golang-src +libpthread/g' feeds/packages/lang/golang/golang/Makefile
 rm -rf feeds/packages/utils/ttyd/
 svn co https://github.com/openwrt/packages/trunk/utils/ttyd feeds/packages/utils/ttyd
 svn co https://github.com/coolsnowwolf/lede/trunk/tools/ucl tools/ucl
