@@ -19,7 +19,7 @@ on:
     paths:
       - 'xy.config'
 #  schedule:
-#    - cron: 0 23 1 * *
+#    - cron: 0 23 7 * *
   watch:
     types: started
 

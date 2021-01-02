@@ -136,6 +136,8 @@ rm -rf feeds/packages/lang/golang/
 svn co https://github.com/Lienol/openwrt-packages/trunk/lang/golang feeds/packages/lang/golang
 rm -rf feeds/packages/libs/libcap/
 svn co https://github.com/openwrt/packages/trunk/libs/libcap feeds/packages/libs/libcap
+rm -rf feeds/packages/lang/node/
+svn co https://github.com/openwrt/packages/trunk/lang/node feeds/packages/lang/node
 rm -rf feeds/packages/utils/ttyd/
 svn co https://github.com/openwrt/packages/trunk/utils/ttyd feeds/packages/utils/ttyd
 svn co https://github.com/coolsnowwolf/lede/trunk/tools/ucl tools/ucl
@@ -167,6 +169,7 @@ git clone https://github.com/lllrrr/mysmartdns package/mysmartdns
 #sed -i 's_../../_$(TOPDIR)/feeds/luci/_' package/lean/luci-app-smartdns/Makefile
 cp ../target.mk include/
 cp -r ../feeds/packages/ feeds/
+cp -r ../tvb/ package/lede/
 #cp ../luci.mk feeds/luci/
 cp ../zzz-default-settings package/lean/default-settings/files/
 sed -i "s/8.3.19.0410/9.$(date "+%y.%m%d.%H")/g" package/lean/default-settings/files/zzz-default-settings
