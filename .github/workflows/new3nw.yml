@@ -20,8 +20,8 @@ on:
       - '7621.config'
   schedule:
     - cron: 0 21 7 * *
-#  watch:
-#    types: started
+  watch:
+    types: started
 
 env:
   REPO_URL: https://github.com/openwrt/openwrt
