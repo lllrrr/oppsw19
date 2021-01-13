@@ -138,6 +138,9 @@ rm -rf feeds/packages/libs/libcap/
 svn co https://github.com/openwrt/packages/trunk/libs/libcap feeds/packages/libs/libcap
 rm -rf feeds/packages/lang/node/
 svn co https://github.com/openwrt/packages/trunk/lang/node feeds/packages/lang/node
+rm -rf feeds/packages/net/haproxy/
+svn co https://github.com/openwrt/packages/trunk/net/haproxy feeds/packages/net/haproxy
+svn co https://github.com/openwrt/openwrt/trunk/package/utils/lua5.3 package/utils/lua5.3
 rm -rf feeds/packages/utils/ttyd/
 svn co https://github.com/openwrt/packages/trunk/utils/ttyd feeds/packages/utils/ttyd
 svn co https://github.com/coolsnowwolf/lede/trunk/tools/ucl tools/ucl
