@@ -18,8 +18,8 @@ on:
       - master
     paths:
       - 'n1.config'
-  schedule:
-    - cron: 0 22 7 * *
+#  schedule:
+#    - cron: 0 22 7 * *
   watch:
     types: started
 
