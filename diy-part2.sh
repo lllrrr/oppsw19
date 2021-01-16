@@ -140,6 +140,8 @@ svn co https://github.com/openwrt/packages/trunk/libs/libcap feeds/packages/libs
 rm -rf feeds/packages/lang/node/
 svn co https://github.com/openwrt/packages/trunk/lang/node feeds/packages/lang/node
 rm -rf feeds/packages/net/haproxy/
+sed -i 's/enabled 1/enabled 0/g' feeds/packages/lang/php7/files/php7-fastcgi.config
+sed -i 's/enabled 1/enabled 0/g' feeds/packages/lang/php7/files/php7-fpm.config
 svn co https://github.com/openwrt/packages/trunk/net/haproxy feeds/packages/net/haproxy
 svn co https://github.com/openwrt/openwrt/trunk/package/utils/lua5.3 package/utils/lua5.3
 rm -rf feeds/packages/utils/ttyd/
