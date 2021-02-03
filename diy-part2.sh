@@ -100,6 +100,7 @@ sed -i 's_../../_$(TOPDIR)/feeds/luci/_' package/lean/luci-theme-opentomato/Make
 #svn co https://github.com/frainzy1477/luci-app-clash/trunk package/lean/luci-app-clash
 git clone https://github.com/vernesong/OpenClash package/lean/OpenClash
 git clone https://github.com/destan19/OpenAppFilter package/lean/OpenAppFilter
+sed -i 's/users~/users=/g' package/lean/OpenAppFilter/luci-app-oaf/luasrc/model/cbi/appfilter/appfilter.lua
 git clone https://github.com/tuanqing/install-program package/lean/install-program
 git clone https://github.com/vison9889/luci-app-eqos package/lean/luci-app-eqos
 #svn co https://github.com/project-openwrt/BaiduPCS-Web/trunk package/lean/BaiduPCS-Web
@@ -176,7 +177,7 @@ git clone https://github.com/lllrrr/mysmartdns package/mysmartdns
 #sed -i 's_../../_$(TOPDIR)/feeds/luci/_' package/lean/luci-app-smartdns/Makefile
 cp ../target.mk include/
 cp -r ../feeds/packages/ feeds/
-cp -r ../tvb/ package/lede/
+#cp -r ../tvb/ package/lede/
 #cp ../luci.mk feeds/luci/
 cp ../zzz-default-settings package/lean/default-settings/files/
 sed -i "s/8.3.19.0410/9.$(date "+%y.%m%d.%H")/g" package/lean/default-settings/files/zzz-default-settings
