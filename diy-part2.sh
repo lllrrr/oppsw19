@@ -56,6 +56,7 @@ svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-wrtbwmon
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/qt5 package/lean/qt5
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/qBittorrent package/lean/qBittorrent
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/rblibtorrent package/lean/rblibtorrent
+svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-ttyd package/lean/luci-app-ttyd
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-qbittorrent package/lean/luci-app-qbittorrent
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/baidupcs-web package/lean/baidupcs-web
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-baidupcs-web package/lean/luci-app-baidupcs-web
@@ -73,7 +74,7 @@ git clone https://github.com/Lienol/openwrt-package package/openwrt-package
 #git clone https://github.com/lllrrr/mypswold package/mypswold
 #svn co https://github.com/lllrrr/openwrt-Li/trunk/lienol/luci-app-passwall package/lienol/luci-app-passwall
 svn co https://github.com/lllrrr/mypsw/trunk/theme package/lean/theme
-svn co https://github.com/lllrrr/myttyd/trunk/luci-app-terminal package/lean/luci-app-terminal
+#svn co https://github.com/lllrrr/myttyd/trunk/luci-app-terminal package/lean/luci-app-terminal
 #sed -i 's_../../_$(TOPDIR)/feeds/luci/_' package/lean/luci-app-terminal/Makefile
 svn co https://github.com/rosywrt/luci-theme-rosy/trunk/luci-theme-rosy package/lean/luci-theme-rosy
 git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon package/lean/luci-theme-argon
@@ -146,8 +147,8 @@ sed -i 's/enabled 1/enabled 0/g' feeds/packages/lang/php7/files/php7-fastcgi.con
 sed -i 's/enabled 1/enabled 0/g' feeds/packages/lang/php7/files/php7-fpm.config
 svn co https://github.com/openwrt/packages/trunk/net/haproxy feeds/packages/net/haproxy
 svn co https://github.com/openwrt/openwrt/trunk/package/utils/lua5.3 package/utils/lua5.3
-rm -rf feeds/packages/utils/ttyd/
-svn co https://github.com/openwrt/packages/trunk/utils/ttyd feeds/packages/utils/ttyd
+#rm -rf feeds/packages/utils/ttyd/
+#svn co https://github.com/openwrt/packages/trunk/utils/ttyd feeds/packages/utils/ttyd
 svn co https://github.com/coolsnowwolf/lede/trunk/tools/ucl tools/ucl
 svn co https://github.com/coolsnowwolf/lede/trunk/tools/upx tools/upx
 cp ../Makefile tools/
