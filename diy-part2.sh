@@ -137,7 +137,7 @@ rm -rf feeds/packages/lang/golang/
 #svn co https://github.com/openwrt/openwrt/trunk/package/libs/openssl package/libs/openssl/
 #svn co https://github.com/openwrt/packages/trunk/lang/golang feeds/packages/lang/golang
 #sed -i 's/+golang-src/+golang-src +libpthread/g' feeds/packages/lang/golang/golang/Makefile
-svn co https://github.com/Lienol/openwrt-packages/trunk/lang/golang feeds/packages/lang/golang
+svn co https://github.com/openwrt/packages/trunk/lang/golang feeds/packages/lang/golang
 rm -rf feeds/packages/libs/libcap/
 svn co https://github.com/openwrt/packages/trunk/libs/libcap feeds/packages/libs/libcap
 rm -rf feeds/packages/lang/node/
