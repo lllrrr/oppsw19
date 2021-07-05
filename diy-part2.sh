@@ -139,18 +139,21 @@ rm -rf feeds/packages/lang/golang/
 #sed -i 's/+golang-src/+golang-src +libpthread/g' feeds/packages/lang/golang/golang/Makefile
 svn co https://github.com/openwrt/packages/trunk/lang/golang feeds/packages/lang/golang
 rm -rf feeds/packages/libs/libcap/
-svn co https://github.com/openwrt/packages/trunk/libs/libcap feeds/packages/libs/libcap
-rm -rf feeds/packages/lang/node/
-svn co https://github.com/openwrt/packages/trunk/lang/node feeds/packages/lang/node
+svn co https://github.com/openwrt/packages/branches/openwrt-19.07/libs/libcap feeds/packages/libs/libcap
+#rm -rf feeds/packages/lang/node/
+#svn co https://github.com/openwrt/packages/trunk/lang/node feeds/packages/lang/node
 rm -rf feeds/packages/net/haproxy/
-sed -i 's/enabled 1/enabled 0/g' feeds/packages/lang/php7/files/php7-fastcgi.config
-sed -i 's/enabled 1/enabled 0/g' feeds/packages/lang/php7/files/php7-fpm.config
+#sed -i 's/enabled 1/enabled 0/g' feeds/packages/lang/php7/files/php7-fastcgi.config
+#sed -i 's/enabled 1/enabled 0/g' feeds/packages/lang/php7/files/php7-fpm.config
 svn co https://github.com/openwrt/packages/trunk/net/haproxy feeds/packages/net/haproxy
 svn co https://github.com/openwrt/openwrt/trunk/package/utils/lua5.3 package/utils/lua5.3
+rm -rf package/network/utils/curl/
+svn co https://github.com/openwrt/packages/trunk/net/curl package/network/utils/curl
 #rm -rf feeds/packages/utils/ttyd/
 #svn co https://github.com/openwrt/packages/trunk/utils/ttyd feeds/packages/utils/ttyd
-svn co https://github.com/coolsnowwolf/lede/trunk/tools/ucl tools/ucl
-svn co https://github.com/coolsnowwolf/lede/trunk/tools/upx tools/upx
+svn co https://github.com/Lienol/openwrt/branches/19.07/tools/ucl tools/ucl
+svn co https://github.com/Lienol/openwrt/branches/19.07/tools/upx tools/upx
+svn co https://github.com/Lienol/openwrt/branches/19.07/tools/ninja tools/ninja
 cp ../Makefile tools/
 rm -rf feeds/packages/net/aria2/
 svn co https://github.com/openwrt/packages/trunk/net/aria2 feeds/packages/net/aria2
@@ -177,7 +180,7 @@ git clone https://github.com/lllrrr/mysmartdns package/mysmartdns
 #git clone -b lede https://github.com/pymumu/luci-app-smartdns package/lean/luci-app-smartdns
 #sed -i 's_../../_$(TOPDIR)/feeds/luci/_' package/lean/luci-app-smartdns/Makefile
 cp ../target.mk include/
-cp -r ../feeds/packages/ feeds/
+#cp -r ../feeds/packages/ feeds/
 #cp -r ../tvb/ package/lede/
 #cp ../luci.mk feeds/luci/
 cp ../zzz-default-settings package/lean/default-settings/files/
