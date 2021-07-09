@@ -179,6 +179,7 @@ git clone https://github.com/jerrykuku/luci-app-jd-dailybonus package/lean/luci-
 git clone https://github.com/jerrykuku/node-request package/lean/node-request
 #svn co https://github.com/openwrt/packages/trunk/libs/libmaxminddb package/lean/libmaxminddb
 #svn co https://github.com/openwrt/packages/trunk/utils/zstd package/lean/zstd
+sed -i 's/Bypass/旁路/g' package/sale/luci-app-bypass/luasrc/controller/bypass.lua
 #git clone https://github.com/lllrrr/frpmod package/lean/frpmod
 rm -rf feeds/packages/net/kcptun/
 #rm -rf feeds/packages/utils/ttyd/
