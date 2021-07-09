@@ -127,7 +127,7 @@ git clone https://github.com/llccd/openwrt-fullconenat package/lean/openwrt-full
 #svn co https://github.com/Leo-Jo-My/luci-app-vssr-coexist/trunk package/lean/luci-app-vssr-coexist
 #svn co https://github.com/Leo-Jo-My/luci-app-vssr/trunk package/lean/luci-app-vssr
 #svn co https://github.com/Leo-Jo-My/my/trunk package/lean/my
-git clone https://github.com/lllrrr/luci-app-diskman package/lean/luci-app-diskman
+git clone https://github.com/lisaac/luci-app-diskman package/lean/luci-app-diskman
 mkdir package/lean/parted
 mv package/lean/luci-app-diskman/Parted.Makefile package/lean/parted/Makefile
 sed -i 's/DiskMan 磁盘管理/磁盘管理/g' package/lean/luci-app-diskman/po/zh-cn/diskman.po
