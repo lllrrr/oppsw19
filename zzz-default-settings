@@ -16,7 +16,7 @@ uci commit fstab
 uci set network.lan.ipaddr=192.168.123.1
 uci commit network
 
-echo "00 5 * * 1 sleep 5 && touch /etc/banner && reboot" >> /etc/crontabs/root
+#echo "00 5 * * 1 sleep 5 && touch /etc/banner && reboot" >> /etc/crontabs/root
 
 sed -i 's/root::0:0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/g' /etc/shadow
 
