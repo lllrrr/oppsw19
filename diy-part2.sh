@@ -145,7 +145,9 @@ rm -rf feeds/packages/lang/golang/
 svn co https://github.com/openwrt/packages/trunk/lang/golang feeds/packages/lang/golang
 rm -rf feeds/packages/libs/libcap/
 svn co https://github.com/openwrt/packages/branches/openwrt-19.07/libs/libcap feeds/packages/libs/libcap
-#rm -rf feeds/packages/lang/node/
+rm -rf feeds/packages/lang/node
+rm -rf feeds/packages/lang/node-*
+git clone -b openwrt-19.07 https://github.com/nxhack/openwrt-node-packages feeds/packages/lang/node
 #svn co https://github.com/openwrt/packages/trunk/lang/node feeds/packages/lang/node
 rm -rf feeds/packages/net/haproxy/
 #sed -i 's/enabled 1/enabled 0/g' feeds/packages/lang/php7/files/php7-fastcgi.config
