@@ -20,7 +20,6 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon-dark-mod/g' feeds/luci/collectio
 #sed -i 's/+kmod-nls-base @BUILD_PATENTED/+kmod-nls-base/g' feeds/packages/kernel/exfat-nofuse/Makefile
 sed -i 's/IMG_PREFIX:=$(VERSION_DIST_SANITIZED)/IMG_PREFIX:=R9-$(shell date +%F-%H)-$(VERSION_DIST_SANITIZED)/g' include/image.mk
 
-
 git clone https://github.com/lllrrr/mysale package/sale
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/ddns-scripts_aliyun package/lean/ddns-scripts_aliyun
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/ddns-scripts_dnspod package/lean/ddns-scripts_dnspod
@@ -161,7 +160,11 @@ svn co https://github.com/openwrt/packages/trunk/net/curl package/network/utils/
 svn co https://github.com/Lienol/openwrt/branches/19.07/tools/ucl tools/ucl
 svn co https://github.com/Lienol/openwrt/branches/19.07/tools/upx tools/upx
 #svn co https://github.com/Lienol/openwrt/branches/19.07/tools/ninja tools/ninja
-cp ../Makefile tools/
+cp ../comm/Makefile tools/
+cp ../comm/cmake.mk include/
+cp ../comm/rules.mk .
+cp ../comm/ninja staging_dir/hostpkg/bin/
+chmod 777 staging_dir/hostpkg/bin/ninja
 rm -rf feeds/packages/net/aria2/
 svn co https://github.com/openwrt/packages/trunk/net/aria2 feeds/packages/net/aria2
 #sed -i 's/1.33.0/1.33.1/g' feeds/packages/net/aria2/Makefile
