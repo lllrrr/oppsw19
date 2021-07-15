@@ -161,10 +161,10 @@ svn co https://github.com/Lienol/openwrt/branches/19.07/tools/ucl tools/ucl
 svn co https://github.com/Lienol/openwrt/branches/19.07/tools/upx tools/upx
 #svn co https://github.com/Lienol/openwrt/branches/19.07/tools/ninja tools/ninja
 cp ../comm/Makefile tools/
-cp ../comm/cmake.mk include/
-cp ../comm/rules.mk .
-cp ../comm/ninja staging_dir/hostpkg/bin/
-chmod 777 staging_dir/hostpkg/bin/ninja
+#cp ../comm/cmake.mk include/
+#cp ../comm/rules.mk .
+#cp ../comm/ninja staging_dir/hostpkg/bin/
+#chmod 777 staging_dir/hostpkg/bin/ninja
 rm -rf feeds/packages/net/aria2/
 svn co https://github.com/openwrt/packages/trunk/net/aria2 feeds/packages/net/aria2
 #sed -i 's/1.33.0/1.33.1/g' feeds/packages/net/aria2/Makefile
@@ -190,7 +190,7 @@ rm -rf feeds/packages/net/kcptun/
 #git clone https://github.com/pymumu/openwrt-smartdns package/lean/openwrt-smartdns
 #git clone -b lede https://github.com/pymumu/luci-app-smartdns package/lean/luci-app-smartdns
 #sed -i 's_../../_$(TOPDIR)/feeds/luci/_' package/lean/luci-app-smartdns/Makefile
-cp ../target.mk include/
+cp ../comm/target.mk include/
 #cp -r ../feeds/packages/ feeds/
 #cp -r ../tvb/ package/lede/
 #cp ../luci.mk feeds/luci/
